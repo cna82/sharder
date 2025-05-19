@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@import 'swiper/css';
+@import 'swiper/css/effect-coverflow';
+@import 'swiper/css/pagination';
+@import 'swiper/css/navigation';
 
 :root {
   --background: #ffffff;
@@ -22,5 +26,49 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Vazir, Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: 'Vazir';
+  src: url('/fonts/Vazir.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes scale-fade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-fade {
+  animation: scale-fade 0.8s ease-out;
+}
+
+.swiper-slide {
+  opacity: 0.4;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+}
+
+.swiper-slide.swiper-slide-active {
+  opacity: 1 !important;
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: red !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: red !important;
 }

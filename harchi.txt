@@ -1,0 +1,16 @@
+drop down btn for products
+ssr needed
+layout handling
+header
+footer 
+404
+ eror boundary 
+ seo 
+ image next 
+ server functiuon
+ middle ware
+catalog
+debug
+about section 
+api for faq read from json 
+clean code and arrow functions
