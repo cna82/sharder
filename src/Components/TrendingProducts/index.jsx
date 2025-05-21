@@ -78,7 +78,7 @@ const TrendingProducts = () => {
             >
               <Link href={`/products/${num}`}>
                 <Image
-                  src={`/Products/product (${num}).webp`}
+                  src={`/images/Trending/trending-${num}.webp`}
                   alt={`product-${num}`}
                   width={500}
                   height={600}
