@@ -4,23 +4,42 @@ import Link from "next/link";
 
 // Hero Comp
 const TrendingProducts = async () => {
-  let features = [];
+  // let features = [];
 
-  try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-    const res = await fetch(`${baseUrl}/api/trending`, {
-      cache: "force-cache",
-    });
+  // try {
+  //   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  //   const res = await fetch(`${baseUrl}/api/trending`, {
+  //     cache: "force-cache",
+  //   });
 
-    if (!res.ok) {
-      const text = await res.text();
-      console.error("❌ خطا در واکشی ویژگی‌ها:", text);
-    } else {
-      features = await res.json();
-    }
-  } catch (error) {
-    console.error("🚫 مشکل در واکشی داده‌ها:", error);
-  }
+  //   if (!res.ok) {
+  //     const text = await res.text();
+  //     console.error("❌ خطا در واکشی ویژگی‌ها:", text);
+  //   } else {
+  //     features = await res.json();
+  //   }
+  // } catch (error) {
+  //   console.error("🚫 مشکل در واکشی داده‌ها:", error);
+  // }
+
+  const features = [
+    {
+      icon: "/images/Trending/Warranty.webp",
+      title: "خدمات پس از فروش",
+    },
+    {
+      icon: "/images/Trending/Agency.webp",
+      title: "اخذ نمایندگی فروش",
+    },
+    {
+      icon: "/images/Trending/OEM.webp",
+      title: "تولید لوازم خانگی OEM",
+    },
+    {
+      icon: "/images/Trending/Complaints .webp",
+      title: "شکایات و انتقادات",
+    },
+  ];
 
   return (
     <section className="bg-gray-50 py-14 px-4 md:px-10">
