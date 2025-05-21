@@ -7,14 +7,10 @@ const TrendingProducts = async () => {
   let features = [];
 
   try {
-    const res = await fetch(
-      `${
-        process.env.NODE_ENV === "development" ? "http://localhost:3000" : ""
-      }/api/trending`,
-      {
-        cache: "force-cache",
-      }
-    );
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const res = await fetch(`${baseUrl}/api/trending`, {
+      cache: "force-cache",
+    });
 
     if (!res.ok) {
       const text = await res.text();
