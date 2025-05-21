@@ -1,21 +1,54 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { X, Search, AlertTriangle } from "lucide-react";
+import React from "react";
+
+const ProductCard = React.memo(({ product }) => (
+  <Link href={`/products/${product.id}`}>
+    <div className="group relative bg-white border border-gray-200 rounded-3xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
+      <div className="relative w-full aspect-square overflow-hidden bg-gray-50">
+        <Image
+          src={product.imgSrc}
+          alt={product.title}
+          fill
+          className="object-contain p-6 transition-transform duration-500 group-hover:scale-110"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 group-hover:opacity-100 opacity-0 backdrop-blur-sm bg-white/30 transition-opacity duration-300 flex items-center justify-center">
+          <span className="text-gray-900 text-sm sm:text-base font-semibold">
+            مشاهده جزئیات
+          </span>
+        </div>
+      </div>
+      <div className="p-4 bg-gray-700 text-center">
+        <h3 className="text-lg font-bold text-teal-100">{product.title}</h3>
+      </div>
+    </div>
+  </Link>
+));
 
 export default function ProductsClient({ products }) {
   const [searchTerm, setSearchTerm] = useState("");
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("");
 
-  const filteredProducts = products.filter((product) => {
-    const matchesSearch = product.title.includes(searchTerm);
-    const matchesCategory = categoryFilter
-      ? product.category === categoryFilter
-      : true;
-    return matchesSearch && matchesCategory;
-  });
+  useEffect(() => {
+    const handler = setTimeout(() => setDebouncedSearchTerm(searchTerm), 300);
+    return () => clearTimeout(handler);
+  }, [searchTerm]);
+
+  const filteredProducts = useMemo(() => {
+    return products.filter((product) => {
+      const matchesSearch = product.title.includes(debouncedSearchTerm);
+      const matchesCategory = categoryFilter
+        ? product.category === categoryFilter
+        : true;
+      return matchesSearch && matchesCategory;
+    });
+  }, [products, debouncedSearchTerm, categoryFilter]);
 
   return (
     <>
@@ -24,7 +57,9 @@ export default function ProductsClient({ products }) {
         <h1 className="text-5xl font-extrabold drop-shadow-xl mb-3 tracking-tight">
           محصولات شاردر
         </h1>
-        <p className="text-md font-light">چرخ‌گوشت‌های خاص ، مخصوص خاص ترین ها </p>
+        <p className="text-md font-light">
+          چرخ‌گوشت‌های خاص ، مخصوص خاص ترین ها{" "}
+        </p>
       </div>
 
       {/* Filters */}
@@ -93,28 +128,7 @@ export default function ProductsClient({ products }) {
       {/* Products Grid */}
       <div className="grid p-10 bg-gradient-to-br from-white border via-purple-50 to-teal-50 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6 md:px-20 pb-24">
         {filteredProducts.map((product) => (
-          <Link href={`/products/${product.id}`} key={product.id}>
-            <div className="group relative bg-white border border-gray-200 rounded-3xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-              <div className="relative w-full aspect-square overflow-hidden bg-gray-50">
-                <Image
-                  src={product.imgSrc}
-                  alt={product.title}
-                  fill
-                  className="object-contain p-6 transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 group-hover:opacity-100 opacity-0 backdrop-blur-sm bg-white/30 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-gray-900 text-sm sm:text-base font-semibold">
-                    مشاهده جزئیات
-                  </span>
-                </div>
-              </div>
-              <div className="p-4 bg-gray-700 text-center">
-                <h3 className="text-lg font-bold text-teal-100">
-                  {product.title}
-                </h3>
-              </div>
-            </div>
-          </Link>
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </>

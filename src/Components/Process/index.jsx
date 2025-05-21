@@ -6,46 +6,48 @@ import {
   ShoppingCart,
 } from "lucide-react";
 
-const Process = () => {
-  const steps = [
-    {
-      title: "درخواست مواد خام اولیه",
-      description: "ثبت سفارش مواد اولیه مورد نیاز برای شروع فرآیند تولید",
-      icon: <Package className="w-6 h-6 text-purple-500" />,
-    },
-    {
-      title: "تحویل به خط تولید مجموعه",
-      description: "انتقال مواد اولیه به خطوط تولید جهت پردازش",
-      icon: <Factory className="w-6 h-6 text-purple-500" />,
-    },
-    {
-      title: "تولید قطعه",
-      description: "ساخت قطعات مورد نظر با استفاده از تجهیزات پیشرفته",
-      icon: <Hammer className="w-6 h-6 text-purple-500" />,
-    },
-    {
-      title: "ارسال به انبار جهت بسته بندی",
-      description: "انتقال قطعات تولید شده به انبار برای بسته‌بندی نهایی",
-      icon: <Warehouse className="w-6 h-6 text-purple-500" />,
-    },
-    {
-      title: "تحویل به واحد فروش",
-      description: "تحویل بسته‌بندی‌های نهایی به تیم فروش برای عرضه",
-      icon: <ShoppingCart className="w-6 h-6 text-purple-500" />,
-    },
-  ];
+const steps = [
+  {
+    title: "درخواست مواد خام اولیه",
+    description: "ثبت سفارش مواد اولیه مورد نیاز برای شروع فرآیند تولید",
+    icon: <Package className="w-6 h-6 text-purple-500" />,
+  },
+  {
+    title: "تحویل به خط تولید مجموعه",
+    description: "انتقال مواد اولیه به خطوط تولید جهت پردازش",
+    icon: <Factory className="w-6 h-6 text-purple-500" />,
+  },
+  {
+    title: "تولید قطعه",
+    description: "ساخت قطعات مورد نظر با استفاده از تجهیزات پیشرفته",
+    icon: <Hammer className="w-6 h-6 text-purple-500" />,
+  },
+  {
+    title: "ارسال به انبار جهت بسته بندی",
+    description: "انتقال قطعات تولید شده به انبار برای بسته‌بندی نهایی",
+    icon: <Warehouse className="w-6 h-6 text-purple-500" />,
+  },
+  {
+    title: "تحویل به واحد فروش",
+    description: "تحویل بسته‌بندی‌های نهایی به تیم فروش برای عرضه",
+    icon: <ShoppingCart className="w-6 h-6 text-purple-500" />,
+  },
+];
 
+const Process = () => {
   return (
     <div className="w-full bg-white">
-      <section className="w-[80%] m-auto py-40 px-10  text-center">
-        <h2 className="md:text-4xl lg:text-4xl sm:text-5xl  font-bold text-purple-600 mb-2">
-          فرآیند تولید محصولات در <span className="md:text-4xl lg:text-5xl sm:text-5xl text-3xl text-teal-500 mb-5">شاردر</span>
+      <section className="w-[80%] mx-auto py-40 px-10 text-center">
+        <h2 className="text-4xl font-bold text-purple-600 mb-2">
+          فرآیند تولید محصولات در{" "}
+          <span className="text-5xl text-teal-500 mb-5">شاردر</span>
         </h2>
         <p className="text-xl mt-5 font-semibold text-gray-500 mb-12">
           مراحل انجام تولید قطعه در شاردر
         </p>
 
-        <div className="relative w-full max-w-7xl text-lg mx-auto">
+        <div className="relative w-full max-w-7xl mx-auto text-lg">
+          {/* خطوط منحنی وسط */}
           <svg
             viewBox="0 0 100 600"
             preserveAspectRatio="none"
@@ -74,16 +76,19 @@ const Process = () => {
             />
           </svg>
 
+          {/* مراحل */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-15 relative z-10">
             {steps.map((step, index) => (
               <div
                 key={index}
                 className="flex flex-col gap-2 items-center text-center w-full md:w-auto"
               >
-                <div className="flex items-center justify-center  w-16 h-16 mt-[-1rem] rounded-full bg-teal-100 mb-8 shadow-md">
+                <div className="flex items-center justify-center w-16 h-16 mt-[-1rem] rounded-full bg-teal-100 mb-8 shadow-md">
                   {step.icon}
                 </div>
-                <h3 className="font-bold text-base text-gray-800 mb-1 !text-shadow-black">{step.title}</h3>
+                <h3 className="font-bold text-base text-gray-800 mb-1 !text-shadow-black">
+                  {step.title}
+                </h3>
                 <p className="text-sm text-gray-600 max-w-[160px]">
                   {step.description}
                 </p>

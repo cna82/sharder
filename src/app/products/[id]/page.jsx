@@ -1,8 +1,7 @@
 import { getProductById } from "@/lib/data/products";
 import Image from "next/image";
 import Link from "next/link";
-import { redirect } from "next/navigation"; // تغییر این خط
-// import { notFound } from "next/navigation"; // این دیگر لازم نیست
+import { redirect } from "next/navigation";
 
 export async function generateMetadata({ params }) {
   const product = await getProductById(params.id);
@@ -10,7 +9,7 @@ export async function generateMetadata({ params }) {
   return { title: product.title };
 }
 
-export default async function ProductPage({ params }) {
+const ProductPage = async ({ params }) => {
   const product = await getProductById(params.id);
 
   if (!product) return redirect("/products"); // ریدایرکت در صورت نبود محصول
@@ -128,4 +127,6 @@ export default async function ProductPage({ params }) {
       </div>
     </div>
   );
-}
+};
+
+export default ProductPage;

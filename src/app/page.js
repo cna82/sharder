@@ -13,7 +13,6 @@ const Home = () => {
       <AmazingFeatures />
       <AboutSection />
       <WarrantySection />
-      {/* //api needed */}
       <TrendingProducts /> 
       <FactoryImageGallery />
       <Process />

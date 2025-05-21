@@ -51,7 +51,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section dir="rtl" className="bg-gray-200 py-16 px-4 md:px-8 relative">
+    <section dir="rtl" className="bg-gray-100/90 py-16 px-4 md:px-8 relative">
       {/* افکت خطوط مورب */}
       <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
         <svg className="w-full h-full">

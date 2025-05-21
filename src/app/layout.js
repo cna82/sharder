@@ -16,10 +16,13 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "شاردر | صفحه اصلی ",
-  description: "صفحه اصلی سایت شاردر  و تولید کننده قطعات صنعتی ",
+  description: "صفحه اصلی سایت شاردر  و تولید کننده لوازم خانگی  ",
+  icons: {
+    icon: "/images/favicon.png",
+  },
 };
 
-export default function RootLayout({ children }) {
+const RootLayout = ({ children }) => {
   return (
     <html lang="fa">
       <body
@@ -29,8 +32,10 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <ScrollToTopButton />
-        <Footer />
+        <Footer/>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

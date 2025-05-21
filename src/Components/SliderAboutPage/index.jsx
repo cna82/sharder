@@ -12,45 +12,50 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+// تصاویر گالری کارخانه
 const images = [
-  "/images/imageGalleryFactory/factory-env (1).webp",
-  "/images/imageGalleryFactory/factory-env (2).webp",
-  "/images/imageGalleryFactory/factory-env (3).webp",
-  "/images/imageGalleryFactory/factory-env (4).webp",
-  "/images/imageGalleryFactory/factory-env (5).webp",
-  "/images/imageGalleryFactory/factory-env (6).webp",
+  "/images/HeroSection/Hero-section-1.webp",
+  "/images/HeroSection/Hero-section-2.webp",
+  "/images/HeroSection/Hero-section-3.webp",
+  "/images/HeroSection/Hero-section-4.webp",
+  "/images/HeroSection/Hero-section-5.webp",
 ];
 
 export default function AboutHero() {
   return (
     <section className="w-full bg-gradient-to-br from-purple-100 via-white to-teal-100">
-      {/* بخش بالایی: تصویر و متن */}
+      {/* بخش معرفی */}
       <div className="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+        {/* تصویر اصلی */}
         <div className="relative w-full h-[320px] sm:h-[400px] md:h-[450px] rounded-3xl overflow-hidden shadow-2xl">
           <Image
             src="/images/HeroAbout/haro.webp"
             alt="چرخ گوشت صنعتی"
             fill
+            priority // مهم برای LCP
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="rounded-3xl object-cover"
           />
         </div>
 
+        {/* توضیحات و لوگو */}
         <div className="text-center md:text-right text-black">
-          <Image
-            src="/images/logo/logo.png"
-            alt="لوگو"
-            width={180}
-            height={180}
-            className="mx-auto md:mx-0 mb-6 drop-shadow-xl"
-          />
+          <div className="w-[180px] h-[180px] relative mx-auto md:mx-0 mb-6 drop-shadow-xl">
+            <Image
+              src="/images/logo/logo.png"
+              alt="لوگو شاردر"
+              fill
+              sizes="180px"
+              className="object-contain"
+              priority // چون بالاست
+            />
+          </div>
 
           <p className="mt-6 text-base sm:text-lg md:text-xl text-gray-700 leading-8">
             این مجموعه با هدف تولید لوازم خانگی برقی آشپزخانه، در شرایط دشوار
-            اقتصادی و دوران تحریم،
-            <br />
-            با اتکا به دانش و همت متخصصان ایرانی شکل گرفته و تلاش می‌کند
-            محصولاتی با کیفیت، قیمت مناسب و خدماتی شایسته به مردم ایران ارائه
-            دهد.
+            اقتصادی و دوران تحریم، با اتکا به دانش و همت متخصصان ایرانی شکل
+            گرفته و تلاش می‌کند محصولاتی با کیفیت، قیمت مناسب و خدماتی شایسته به
+            مردم ایران ارائه دهد.
             <br />
             <br />
             حمایت از تولید ملی، نقش مهمی در اشتغال‌زایی و رشد اقتصادی کشور دارد.
@@ -59,7 +64,7 @@ export default function AboutHero() {
         </div>
       </div>
 
-      {/* اسلایدر پیشرفته با فوکوس مرکزی */}
+      {/* اسلایدر گالری کارخانه (دست‌نخورده از نظر طراحی) */}
       <div className="w-full py-14 px-4 md:px-20">
         <Swiper
           effect="coverflow"
@@ -68,7 +73,7 @@ export default function AboutHero() {
           slidesPerView="auto"
           loop
           autoplay={{
-            delay: 3500,
+            delay: 3000,
             disableOnInteraction: false,
           }}
           navigation
@@ -81,7 +86,7 @@ export default function AboutHero() {
             slideShadows: false,
           }}
           modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
-          className="max-w-7xl"
+          className="max-w-10xl"
         >
           {images.map((src, idx) => (
             <SwiperSlide
@@ -93,6 +98,8 @@ export default function AboutHero() {
                   src={src}
                   alt={`اسلاید ${idx + 1}`}
                   fill
+                  loading="lazy"
+                  sizes="(max-width: 768px) 80vw, 600px"
                   className="object-cover rounded-2xl transition-all duration-300 group-hover:scale-105"
                 />
               </div>
