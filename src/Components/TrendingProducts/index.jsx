@@ -4,12 +4,23 @@ import Link from "next/link";
 
 // Hero Comp
 const TrendingProducts = async () => {
-  // server side api call
-  const res = await fetch(`${process.env.BASE_URL}/api/trending`, {
-    cache: "force-cache",
-  });
-  const features = await res.json();
-  // retuen of comp
+  let features = [];
+
+  try {
+    const res = await fetch(`${process.env.BASE_URL}/api/trending`, {
+      cache: "force-cache",
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      console.error("خطا در واکشی ویژگی‌ها:", text);
+    } else {
+      features = await res.json();
+    }
+  } catch (error) {
+    console.error("مشکل در واکشی داده‌ها:", error);
+  }
+
   return (
     <section className="bg-gray-50 py-14 px-4 md:px-10">
       <div className="max-w-7xl mx-auto">
@@ -71,25 +82,27 @@ const TrendingProducts = async () => {
         </div>
 
         {/* ویژگی‌ها */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
-          {features.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-white text-teal-900 rounded-2xl p-5 flex flex-col items-center justify-center text-center shadow hover:shadow-xl transition-shadow duration-300"
-            >
-              <Image
-                src={item.icon}
-                alt={item.title}
-                width={100}
-                height={100}
-                className="mb-4"
-              />
-              <span className="text-sm md:text-base font-semibold">
-                {item.title}
-              </span>
-            </div>
-          ))}
-        </div>
+        {features.length > 0 && (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
+            {features.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-white text-teal-900 rounded-2xl p-5 flex flex-col items-center justify-center text-center shadow hover:shadow-xl transition-shadow duration-300"
+              >
+                <Image
+                  src={item.icon}
+                  alt={item.title}
+                  width={100}
+                  height={100}
+                  className="mb-4"
+                />
+                <span className="text-sm md:text-base font-semibold">
+                  {item.title}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
