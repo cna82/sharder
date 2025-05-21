@@ -78,7 +78,7 @@ const Process = () => {
 
           {/* مراحل */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-15 relative z-10">
-            {steps.map((step, index) => (
+            {steps?.map((step, index) => (
               <div
                 key={index}
                 className="flex flex-col gap-2 items-center text-center w-full md:w-auto"

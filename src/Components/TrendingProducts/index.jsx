@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Hero Comp
-const TrendingProducts =  () => {
+const TrendingProducts = () => {
   // let features = [];
 
   // try {
@@ -103,7 +103,7 @@ const TrendingProducts =  () => {
         {/* ویژگی‌ها */}
         {features.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
-            {features.map((item, idx) => (
+            {features?.map((item, idx) => (
               <div
                 key={idx}
                 className="bg-white text-teal-900 rounded-2xl p-5 flex flex-col items-center justify-center text-center shadow hover:shadow-xl transition-shadow duration-300"

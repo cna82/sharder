@@ -83,7 +83,7 @@ export default function AmazingFeatures() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* ویژگی‌ها */}
           <div className="grid sm:grid-cols-2 gap-10">
-            {features.map((item, index) => (
+            {features?.map((item, index) => (
               <div
                 key={index}
                 className="bg-white shadow py-10 px-6 rounded-xl border border-gray-100 hover:shadow-md transition duration-200"

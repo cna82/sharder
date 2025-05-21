@@ -51,7 +51,7 @@ const WarrantySection = () => {
             شرایط و مدت اعتبار ضمانت
           </h3>
           <ul className="grid sm:grid-cols-2 gap-4">
-            {terms.map(([text, icon], i) => (
+            {terms?.map(([text, icon], i) => (
               <li
                 key={i}
                 className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border-l-4 border-teal-600 shadow-sm"
@@ -70,7 +70,7 @@ const WarrantySection = () => {
             مواردی که شامل گارانتی نمی‌شود
           </h3>
           <ul className="space-y-3 text-sm">
-            {exceptions.map((text, i) => (
+            {exceptions?.map((text, i) => (
               <li key={i} className="flex items-start gap-2">
                 <FaRegTimesCircle className="mt-1" />
                 {text}

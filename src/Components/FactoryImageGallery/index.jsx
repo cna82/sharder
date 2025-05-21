@@ -58,7 +58,7 @@ export default function ImageModal({ images }) {
     <>
       {/* Image Gallery */}
       <div className="grid grid-cols-3 gap-4">
-        {images.map((img, i) => (
+        {images?.map((img, i) => (
           <img
             key={i}
             src={img}

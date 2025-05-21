@@ -68,7 +68,7 @@ const Faq = () => {
         </h2>
 
         <div className="space-y-6">
-          {faqs.map((faq, index) => (
+          {faqs?.map((faq, index) => (
             <details
               key={index}
               className="group border border-gray-200 rounded-xl bg-white shadow-sm p-5 transition-all duration-300"

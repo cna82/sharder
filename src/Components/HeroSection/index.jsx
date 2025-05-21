@@ -55,7 +55,7 @@ const features = [
 export default function HeroSection() {
   return (
     <section className="relative w-full h-screen bg-gray-700 overflow-hidden">
-      {slides.map((slide, i) => (
+      {slides?.map((slide, i) => (
         <div key={i} className="absolute inset-0 w-full h-full">
           <Image
             src={slide.src}
@@ -84,7 +84,7 @@ export default function HeroSection() {
         </Link>
 
         <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-5xl">
-          {features.map(({ icon: Icon, title, desc }, idx) => (
+          {features?.map(({ icon: Icon, title, desc }, idx) => (
             <div
               key={idx}
               className="bg-white/10 p-4 rounded-lg text-white text-center backdrop-blur-md"
