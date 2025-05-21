@@ -7,12 +7,47 @@ export const metadata = {
 };
 
 // Server Component
-const Faq = async () => {
-  const res = await fetch(`${process.env.BASE_URL}/api/faq`, {
-    cache: "force-cache", // Change to "no-store" if always fresh data is needed
-  });
-  const faqs = await res.json();
-
+const Faq = () => {
+  // const res = await fetch(`${process.env.BASE_URL}/api/faq`, {
+  //   cache: "force-cache", // Change to "no-store" if always fresh data is needed
+  // });
+  // const faqs = await res.json();
+  const faqs = [
+    {
+      question: "آیا محصولات شما تست کیفیت می‌شوند؟",
+      answer:
+        "بله، تمامی محصولات ما قبل از ارسال از نظر کیفیت بررسی و تست می‌شوند.",
+    },
+    {
+      question: "چگونه محصولات شاردره را خریداری کنم؟",
+      answer:
+        "شما می‌توانید از طریق سایت یا تماس مستقیم با واحد فروش ما خرید خود را انجام دهید.",
+    },
+    {
+      question: "شرایط گارانتی محصولات چگونه است؟",
+      answer: "تمامی محصولات دارای ۱۲ ماه گارانتی تعویض یا تعمیر قطعات می‌باشند.",
+    },
+    {
+      question: "نحوه استفاده صحیح از محصولات را از کجا یاد بگیرم؟",
+      answer:
+        "راهنمای استفاده در جعبه محصول قرار دارد و همچنین ویدئوهای آموزشی در سایت قابل مشاهده هستند.",
+    },
+    {
+      question: "برای تعمیر محصولات به کجا مراجعه کنم؟",
+      answer:
+        "می‌توانید با خدمات پس از فروش ما تماس بگیرید تا شما را راهنمایی کنند.",
+    },
+    {
+      question: "تفاوت مدل‌های مختلف یک محصول (مثل آمیوه‌گیری) چیست؟",
+      answer:
+        "هر مدل برای کاربردی خاص طراحی شده و دارای قدرت و ظرفیت متفاوتی است.",
+    },
+    {
+      question: "آیا لوازم یدکی محصولات موجود است؟",
+      answer: "بله، تمامی قطعات یدکی اصلی توسط شرکت شاردره تأمین می‌گردد.",
+    },
+  ];
+  
   return (
     <main className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
