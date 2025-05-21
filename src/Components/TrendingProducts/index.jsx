@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Hero Comp
-const TrendingProducts = async () => {
+const TrendingProducts =  () => {
   // let features = [];
 
   // try {
