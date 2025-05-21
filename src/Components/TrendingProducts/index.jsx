@@ -7,18 +7,23 @@ const TrendingProducts = async () => {
   let features = [];
 
   try {
-    const res = await fetch(`${process.env.BASE_URL}/api/trending`, {
-      cache: "force-cache",
-    });
+    const res = await fetch(
+      `${
+        process.env.NODE_ENV === "development" ? "http://localhost:3000" : ""
+      }/api/trending`,
+      {
+        cache: "force-cache",
+      }
+    );
 
     if (!res.ok) {
       const text = await res.text();
-      console.error("خطا در واکشی ویژگی‌ها:", text);
+      console.error("❌ خطا در واکشی ویژگی‌ها:", text);
     } else {
       features = await res.json();
     }
   } catch (error) {
-    console.error("مشکل در واکشی داده‌ها:", error);
+    console.error("🚫 مشکل در واکشی داده‌ها:", error);
   }
 
   return (
@@ -35,18 +40,17 @@ const TrendingProducts = async () => {
                   شاردر
                 </span>
               </div>
-
               <div className="flex items-center justify-center gap-1 mt-4 text-gray-500">
                 <span className="text-lg tracking-wide">
-                  کیفیتی بی نظیر ، محبوبیتی افسانه ای‌
+                  کیفیتی بی‌نظیر، محبوبیتی افسانه‌ای
                 </span>
               </div>
             </div>
           </div>
 
           <p className="text-center text-gray-500 text-sm md:text-base">
-            ای‌ محصولات ما طراحی شده‌اند تا نیازهای شما را با کیفیت بی‌نظیر و
-            دوام بالا برآورده کنند.
+            محصولات ما طراحی شده‌اند تا نیازهای شما را با کیفیت بی‌نظیر و دوام
+            بالا برآورده کنند.
           </p>
         </div>
 
