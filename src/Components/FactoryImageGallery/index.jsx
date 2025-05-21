@@ -13,40 +13,63 @@ import {
 } from "lucide-react";
 
 export default function FactoryGallery() {
-  const params = useSearchParams();
+  const searchParams = useSearchParams();
   const router = useRouter();
   const [selected, setSelected] = useState(null);
   const [zoom, setZoom] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const images = [
-    { src: "/images/imageGalleryFactory/factory-env (1).webp", alt: "خط تولید دستگاه‌ها" },
-    { src: "/images/imageGalleryFactory/factory-env (2).webp", alt: "ماشین‌آلات پیشرفته" },
-    { src: "/images/imageGalleryFactory/factory-env (3).webp", alt: "تیم متخصص شاردر" },
-    { src: "/images/imageGalleryFactory/factory-env (4).webp", alt: "مهندسین کارخانه" },
-    { src: "/images/imageGalleryFactory/factory-env (5).webp", alt: "فرآیند مونتاژ قطعات" },
-    { src: "/images/imageGalleryFactory/factory-env (6).webp", alt: "انبار محصولات نهایی" },
+    {
+      src: "/images/imageGalleryFactory/factory-env (1).webp",
+      alt: "خط تولید دستگاه‌ها",
+    },
+    {
+      src: "/images/imageGalleryFactory/factory-env (2).webp",
+      alt: "ماشین‌آلات پیشرفته",
+    },
+    {
+      src: "/images/imageGalleryFactory/factory-env (3).webp",
+      alt: "تیم متخصص شاردر",
+    },
+    {
+      src: "/images/imageGalleryFactory/factory-env (4).webp",
+      alt: "مهندسین کارخانه",
+    },
+    {
+      src: "/images/imageGalleryFactory/factory-env (5).webp",
+      alt: "فرآیند مونتاژ قطعات",
+    },
+    {
+      src: "/images/imageGalleryFactory/factory-env (6).webp",
+      alt: "انبار محصولات نهایی",
+    },
   ];
 
+  // useEffect باید صبر کنه تا params لود بشن
   useEffect(() => {
-    const index = params.get("img");
-    if (index !== null && !isNaN(Number(index))) {
-      const imgIndex = Number(index) - 1;
-      if (imgIndex >= 0 && imgIndex < images.length) {
-        setSelected(imgIndex);
+    const imgParam = searchParams.get("img");
+    if (typeof window === "undefined") return; // از اجرای در SSR جلوگیری می‌کنه
+
+    const header = document.getElementById("fixed-header");
+
+    if (imgParam && !isNaN(Number(imgParam))) {
+      const index = Number(imgParam) - 1;
+      if (index >= 0 && index < images.length) {
+        setSelected(index);
         setIsModalOpen(true);
         document.body.style.overflow = "hidden";
-        const header = document.getElementById("fixed-header");
         if (header) header.style.display = "none";
         return;
       }
     }
-    setIsModalOpen(false);
+
+    // اگر img نامعتبر یا حذف‌شده باشه
     setSelected(null);
+    setIsModalOpen(false);
     document.body.style.overflow = "auto";
-    const header = document.getElementById("fixed-header");
     if (header) header.style.display = "";
-  }, [params]);
+  }, [searchParams]);
 
   const closeModal = () => {
     router.replace("/", { scroll: false });
@@ -74,9 +97,12 @@ export default function FactoryGallery() {
   return (
     <section className="w-full bg-white py-12 px-4 min-h-screen">
       <div className="max-w-4xl mx-auto mb-12 text-center px-4">
-        <h1 className="text-4xl font-extrabold text-teal-600 mb-4">گالری عکس‌های کارخانه شاردر</h1>
+        <h1 className="text-4xl font-extrabold text-teal-600 mb-4">
+          گالری عکس‌های کارخانه شاردر
+        </h1>
         <p className="text-lg text-gray-700">
-          نگاهی نزدیک به محیط و تجهیزات کارخانه شاردر. روی هر عکس کلیک کنید تا آن را بزرگ ببینید و جزئیات را بهتر لمس کنید.
+          نگاهی نزدیک به محیط و تجهیزات کارخانه شاردر. روی هر عکس کلیک کنید تا
+          آن را بزرگ ببینید و جزئیات را بهتر لمس کنید.
         </p>
       </div>
 
@@ -94,7 +120,6 @@ export default function FactoryGallery() {
               height={600}
               className="object-cover w-full h-[220px] transition-transform duration-500 group-hover:scale-105"
             />
-
             <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
               <div className="text-white text-center flex flex-col items-center gap-1 px-4 select-none">
                 <span className="text-2xl">🔍</span>
@@ -103,7 +128,6 @@ export default function FactoryGallery() {
                 </span>
               </div>
             </div>
-
             <div className="p-3 text-center text-purple-700 font-semibold text-sm sm:text-base">
               {img.alt}
             </div>
@@ -127,24 +151,48 @@ export default function FactoryGallery() {
             />
 
             <div className="absolute top-4 right-4 flex gap-2">
-              <button onClick={closeModal} className="text-white p-2 bg-purple-600 rounded-full" title="بستن">
+              <button
+                onClick={closeModal}
+                className="text-white p-2 bg-purple-600 rounded-full"
+                title="بستن"
+              >
                 <X className="w-5 h-5" />
               </button>
-              <button onClick={() => setZoom((z) => Math.min(z + 0.1, 3))} className="text-white p-2 bg-purple-600 rounded-full" title="زوم بیشتر">
+              <button
+                onClick={() => setZoom((z) => Math.min(z + 0.1, 3))}
+                className="text-white p-2 bg-purple-600 rounded-full"
+                title="زوم بیشتر"
+              >
                 <ZoomIn className="w-5 h-5" />
               </button>
-              <button onClick={() => setZoom((z) => Math.max(z - 0.1, 1))} className="text-white p-2 bg-purple-600 rounded-full" title="زوم کمتر">
+              <button
+                onClick={() => setZoom((z) => Math.max(z - 0.1, 1))}
+                className="text-white p-2 bg-purple-600 rounded-full"
+                title="زوم کمتر"
+              >
                 <ZoomOut className="w-5 h-5" />
               </button>
-              <button onClick={() => setZoom(1)} className="text-white p-2 bg-purple-600 rounded-full" title="ریست زوم">
+              <button
+                onClick={() => setZoom(1)}
+                className="text-white p-2 bg-purple-600 rounded-full"
+                title="ریست زوم"
+              >
                 <RefreshCcw className="w-5 h-5" />
               </button>
             </div>
 
-            <button onClick={prevImage} className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white p-2 bg-teal-600 rounded-full" title="قبلی">
+            <button
+              onClick={prevImage}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white p-2 bg-teal-600 rounded-full"
+              title="قبلی"
+            >
               <ArrowLeft className="w-5 h-5" />
             </button>
-            <button onClick={nextImage} className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white p-2 bg-teal-600 rounded-full" title="بعدی">
+            <button
+              onClick={nextImage}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white p-2 bg-teal-600 rounded-full"
+              title="بعدی"
+            >
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>
