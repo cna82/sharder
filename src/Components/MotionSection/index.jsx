@@ -32,7 +32,7 @@ const MotionSection = () => {
       >
         <Link
           href="/"
-          className="bg-white hover:bg-white text-purple-600 font-bold py-3 px-6 rounded-full transition-all duration-300 shadow-lg"
+          className="bg-white hover:bg-white text-sky-600 font-bold py-3 px-6 rounded-full transition-all duration-300 shadow-lg"
         >
           بازگشت به خانه
         </Link>

@@ -82,7 +82,7 @@ export const products = [
   },
   {
     id: 3,
-    title: "چرخ گوشت رز گلد شاردر",
+    title: "چرخ گوشت سفید شاردر",
     description: [
       {
         title: "توان مصرفی: 1800 وات ",
@@ -115,8 +115,8 @@ export const products = [
         title: "دارای پایه ضد لرزش و ضد لغزش",
       },
     ],
-    color: "رزگلد",
-    category: "ساده",
+    color: "سفید",
+    category: "طرح دار",
     imgSrc: "/images/Products/product (3).webp",
     isAvaiable: true,
   },

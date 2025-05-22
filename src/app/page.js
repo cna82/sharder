@@ -1,6 +1,5 @@
 import AboutSection from "@/Components/AboutSection";
 import AmazingFeatures from "@/Components/AmazingFeatures";
-import FactoryImageGallery from "@/Components/FactoryImageGallery";
 import Faq from "@/Components/Faq";
 import HeroSection from "@/Components/HeroSection";
 import Process from "@/Components/Process";
@@ -13,8 +12,7 @@ const Home = () => {
       <AmazingFeatures />
       <AboutSection />
       <WarrantySection />
-      <TrendingProducts /> 
-      <FactoryImageGallery />
+      <TrendingProducts />
       <Process />
       <Faq />
     </>

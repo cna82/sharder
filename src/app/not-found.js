@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Error() {
   return (
-    <div className="min-h-screen bg-purple-400 flex flex-col items-center justify-center px-6 py-8  text-white text-center">
+    <div className="min-h-screen bg-sky-600 flex flex-col items-center justify-center px-6 py-8  text-white text-center">
       <div className="max-w-md w-full mb-10">
         <Image
           src="/images/404/404.webp"

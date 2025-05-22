@@ -15,13 +15,13 @@ const ProductPage = async ({ params }) => {
   if (!product) return redirect("/products"); // ریدایرکت در صورت نبود محصول
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-purple-50 py-12">
+    <div className="min-h-screen bg-gradient-to-b from-white via-gray-300 to-sky-200 py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
           <div className="grid md:grid-cols-2 gap-0" dir="ltr">
             {/* بخش تصویر محصول */}
-            <div className="p-8 flex items-center justify-center bg-gradient-to-br from-purple-50 to-white">
-              <div className="relative w-full max-w-md aspect-square rounded-xl overflow-hidden shadow-inner border-4 border-white">
+            <div className="p-8 flex items-center justify-center bg-gray-100">
+              <div className="relative w-full max-w-md aspect-square rounded-xl overflow-hidden bg-white  shadow-inner border-4 border-white">
                 <Image
                   src={product.imgSrc}
                   alt={product.title}
@@ -34,24 +34,24 @@ const ProductPage = async ({ params }) => {
             </div>
 
             {/* بخش اطلاعات محصول */}
-            <div className="p-8 flex flex-col gap-6 text-right border-r-2 border-purple-100">
+            <div className="p-8 flex flex-col gap-6 text-right border-r-2 border-sky-100">
               <div>
-                <h1 className="text-3xl text-center font-bold text-purple-600 mb-2">
+                <h1 className="text-3xl text-center font-bold text-sky-600 mb-2">
                   {product.title}
                 </h1>
                 <div className="h-[2px] w-full bg-gray-600 rounded-full"></div>
               </div>
 
               <div className="space-y-4">
-                <div className="flex-col-reverse items-center gap-2">
-                  <span className="font-semibold text-teal-600">رنگ:</span>
-                  <span className="text-gray-700">{product.color}</span>
+                <div className="flex-col items-center gap-2" dir="ltr">
+                  <span className="font-semibold text-teal-600 ">رنگ:</span>
+                  <span className="text-gray-700 inline-block mx-2">{product.color}</span>
                 </div>
-                <div className="flex-col-reverse items-center gap-2">
+                <div className="flex-col items-center gap-2">
                   <span className="font-semibold text-teal-600">
-                    دسته‌بندی:
+                    دسته‌بندی : 
                   </span>
-                  <span className="text-gray-700">{product.category}</span>
+                  <span className="text-gray-700 inline-block mx-2">{product.category}</span>
                 </div>
               </div>
 
@@ -90,7 +90,7 @@ const ProductPage = async ({ params }) => {
               </div>
 
               <div className="mt-4">
-                <h2 className="text-xl font-bold text-purple-600 mb-4 pb-2 border-b-2 border-purple-100">
+                <h2 className="text-xl font-bold text-sky-600 mb-4 pb-2 border-b-2 border-sky-100">
                   ویژگی‌های محصول
                 </h2>
                 <ul className="space-y-3">
@@ -115,7 +115,7 @@ const ProductPage = async ({ params }) => {
                 <div className="mt-8">
                   <Link
                     href="/products"
-                    className="inline-block px-6 py-3 text-white bg-purple-600 hover:bg-purple-700 transition rounded-full shadow-md"
+                    className="inline-block px-6 py-3 text-white bg-sky-600 hover:bg-sky-700 transition rounded-full shadow-md"
                   >
                     بازگشت به محصولات
                   </Link>

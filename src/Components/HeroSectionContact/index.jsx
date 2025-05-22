@@ -8,7 +8,7 @@ const HeroSectionContact = ({ container }) => {
 
       {/* محتوای اصلی */}
       <div className="relative max-w-6xl mx-auto z-10 text-center">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-purple-600 mb-6 drop-shadow-sm">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-sky-600 mb-6 drop-shadow-sm">
           تماس با ما
         </h1>
         <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto mb-10 leading-relaxed">

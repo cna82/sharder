@@ -27,7 +27,7 @@ export default function ScrollToTopButton() {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="cursor-pointer fixed bottom-6 right-6 p-3 opacity-75 rounded-full bg-gradient-to-r from-teal-600 to-purple-600 text-white shadow-2xl hover:scale-110 transition-all duration-300 ease-in-out animate-fade-in"
+          className="cursor-pointer fixed bottom-6 right-6 p-3 opacity-70 rounded-full bg-gradient-to-r from-sky-800 to-blue-500 text-white shadow-2xl hover:scale-110 transition-all duration-300 ease-in-out animate-fade-in"
           aria-label="Scroll to top"
         >
           <HiChevronDoubleUp className="w-6 h-6" />

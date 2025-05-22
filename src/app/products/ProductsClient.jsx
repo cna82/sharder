@@ -53,7 +53,7 @@ export default function ProductsClient({ products }) {
   return (
     <>
       {/* Hero */}
-      <div className="bg-gradient-to-br from-purple-700 via-teal-600 to-purple-500 text-white py-24 text-center px-6 shadow-inner">
+      <div className="bg-gradient-to-br from-sky-800 via-blue-400 to-gray-900 text-white py-24 text-center px-6 shadow-inner">
         <h1 className="text-5xl font-extrabold drop-shadow-xl mb-3 tracking-tight">
           محصولات شاردر
         </h1>

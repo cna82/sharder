@@ -1,2 +1,2 @@
 seo 
-clean code and arrow functions
+performnace 

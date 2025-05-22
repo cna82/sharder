@@ -20,21 +20,22 @@ const socialLinks = [
     Icon: FaInstagram,
     color: "bg-pink-500/10",
     hover: "hover:bg-pink-500",
+    href: "https://instagram.com/sharder.co",
+    title: "ارتباط در اینستاگرام",
   },
   {
     Icon: FaTelegramPlane,
     color: "bg-blue-500/10",
     hover: "hover:bg-blue-500",
-  },
-  {
-    Icon: FaLinkedinIn,
-    color: "bg-blue-700/10",
-    hover: "hover:bg-blue-700",
+    href: "https://t.me/+989128433187",
+    title: "ارتباط در تلگرام",
   },
   {
     Icon: FaWhatsapp,
     color: "bg-green-500/10",
     hover: "hover:bg-green-500",
+    href: "https://wa.me/989128433187",
+    title: "ارتباط در واتساپ",
   },
 ];
 
@@ -51,16 +52,28 @@ const contactItems = [
   },
   {
     icon: <FaPhone className="ml-2 text-teal-600 flex-shrink-0" />,
-    content: <span dir="ltr">+۹۸ ۲۱ ۳۶۹۱۷۶۰۳</span>,
+    content: <span dir="ltr">021-36917603</span>,
+  },
+  {
+    icon: <FaPhone className="ml-2 text-teal-600 flex-shrink-0" />,
+    content: (
+      <>
+        <span className="leading-[25px]">
+          ارتباط با مدیر فروش مجموعه :
+          <br />
+          <span dir="ltr">0912 843 3187</span>
+        </span>
+      </>
+    ),
   },
   {
     icon: <FaEnvelope className="ml-2 text-teal-600 flex-shrink-0" />,
     content: (
       <a
-        href="mailto:Sharder.life@gmail.com"
+        href="mailto:Sharderlife@gmail.com"
         className="hover:text-teal-600 transition-colors"
       >
-        Sharder.life@gmail.com
+        Sharderlife@gmail.com
       </a>
     ),
   },
@@ -79,7 +92,7 @@ const Footer = () => {
   }
   return (
     <footer className="bg-gray-100 text-gray-800 pt-12">
-      <div className="h-1 bg-gradient-to-r from-purple-600 to-teal-600 mb-8"></div>
+      <div className="h-1 bg-gradient-to-r from-sky-600 to-blue-300 mb-8"></div>
 
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Company Info */}
@@ -87,23 +100,27 @@ const Footer = () => {
           <Image
             src="/images/logo/logo.png"
             alt="لوگو شاردر"
-            width={100}
-            height={100}
-            className="w-20 mb-4"
+            width={150}
+            height={150}
+            className="w-45 mb-4"
           />
           <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-            شرکت تولید لوازم خانگی شاردر، پیشرو در طراحی و تولید محصولات
-            نوآورانه خانگی با بیش از ۱۵ سال تجربه در صنعت لوازم خانگی است...
+            کارخانه تولید لوازم خانگی شاردر، پیشرو در طراحی و تولید محصولات
+            نوآورانه خانگی تاسیس شده در سال 1400 در صنعت لوازم خانگی و چرخ گوشت
+            است چرخ گوشت هایی مطمئن و بدون خطر ، امضای کار ماست
           </p>
           <div className="flex gap-3">
-            {socialLinks.map(({ Icon, color, hover }, i) => (
+            {socialLinks.map(({ Icon, color, hover, href, title }, i) => (
               <a
                 key={i}
-                href="#"
-                className={`text-purple-600 ${color} ${hover} hover:text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors duration-300`}
+                href={href}
+                className={`text-purple-600 ${color} ${hover} hover:text-white rounded-full w-13 h-13 flex items-center justify-center transition-colors duration-300 `}
                 aria-label={`Social ${i}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={title}
               >
-                <Icon className="text-lg" />
+                <Icon className="text-xl" />
               </a>
             ))}
           </div>
@@ -111,7 +128,7 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-purple-600 text-lg font-bold mb-4 pb-2 border-b border-purple-200">
+          <h3 className="text-sky-600 text-lg font-bold mb-4 pb-2 border-b border-purple-200">
             لینک‌های سریع
           </h3>
           <ul className="space-y-2.5 text-sm">
@@ -132,7 +149,7 @@ const Footer = () => {
 
         {/* Contact Info */}
         <div>
-          <h3 className="text-purple-600 text-lg font-bold mb-4 pb-2 border-b border-purple-200">
+          <h3 className="text-sky-600 text-lg font-bold mb-4 pb-2 border-b border-purple-200">
             تماس با ما
           </h3>
           <div className="space-y-3 text-gray-600 text-sm">
@@ -147,7 +164,7 @@ const Footer = () => {
 
         {/* Map */}
         <div>
-          <h3 className="text-purple-600 text-lg font-bold mb-4 pb-2 border-b border-purple-200">
+          <h3 className="text-sky-600 text-lg font-bold mb-4 pb-2 border-b border-purple-200">
             موقعیت مکانی
           </h3>
           <a
@@ -174,13 +191,22 @@ const Footer = () => {
       <div className="bg-gray-100 mt-12 py-4 text-center text-xs text-gray-500 border-t border-gray-200">
         <div className="max-w-7xl mx-auto px-4">
           کلیه حقوق و امتیازات این وبسایت متعلق به مجموعه
-          <span className="font-bold text-purple-600 inline-block mx-1.5">
+          <span className="font-bold text-sky-600 inline-block mx-1.5">
             شاردر
           </span>
           بوده و هرگونه استفاده از مطالب و مقالات این وبسایت، پیگرد قانونی دارد.
           <div className="mt-2">
             © {new Date().getFullYear()} توسعه یافته توسط تیم مهرسین (mehrSin) -
-            mehrrsinn@gmail.com
+            <span className="text-md font-bold text-sky-600 ">
+              <a
+                href="mailto:mehrrsinn@gmail.com"
+                className="hover:text-teal-600 transition-colors"
+                target="_balnk"
+                rel="noopener noreferrer"
+              >
+                mehrrsinn@gmail.com
+              </a>
+            </span>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
 import ScrollToTopButton from "@/Components/ScrollToTopButton";
+import WhatsAppButton from "@/Components/WhatsAppButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ const RootLayout = ({ children }) => {
         <Header />
         {children}
         <ScrollToTopButton />
+        <WhatsAppButton/>
         <Footer/>
       </body>
     </html>

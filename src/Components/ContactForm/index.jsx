@@ -81,7 +81,7 @@ export default function ContactForm() {
         <div className="animate-pulse bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 opacity-40"></div>
       </div>
       <div className="relative z-10 max-w-4xl mx-auto bg-white p-6 md:p-10 rounded-2xl shadow-xl">
-        <h2 className="text-3xl font-bold text-center text-purple-600 mb-8">
+        <h2 className="text-3xl font-bold text-center text-sky-600 mb-8">
           فرم تماس با ما
         </h2>
 
@@ -144,7 +144,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className=" px-5 py-3 mt-6 cursor-pointer bg-purple-600 text-white font-bold text-lg rounded-lg focus:outline-none disabled:opacity-50"
+              className=" px-5 py-3 mt-6 cursor-pointer bg-sky-600 text-white font-bold text-lg rounded-lg focus:outline-none disabled:opacity-50"
             >
               {isSubmitting ? "در حال ارسال..." : "ارسال پیام"}
             </button>
@@ -164,10 +164,10 @@ function InputField({ label, name, type = "text", register, error }) {
         type={type}
         className={`peer w-full border-2 ${
           error ? "border-red-500" : "border-gray-300"
-        } rounded-lg px-4 pt-5 pb-2 focus:outline-none focus:border-purple-500 transition duration-200`}
+        } rounded-lg px-4 pt-5 pb-2 focus:outline-none focus:border-sky-500 transition duration-200`}
         placeholder=""
       />
-      <label className="absolute right-3 -top-2.5 text-xs text-gray-600 bg-white px-1 peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-purple-500">
+      <label className="absolute right-3 -top-2.5 text-xs text-gray-600 bg-white px-1 peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-sky-500">
         {label}
       </label>
       {error && <p className="text-red-600 text-xs mt-1">{error.message}</p>}
@@ -182,10 +182,10 @@ function FloatingTextarea({ label, name, register, error }) {
         {...register(name)}
         className={`peer w-full border-2 ${
           error ? "border-red-500" : "border-gray-300"
-        } rounded-lg px-4 pt-5 pb-2 h-32 resize-none focus:outline-none focus:border-purple-500 transition duration-200`}
+        } rounded-lg px-4 pt-5 pb-2 h-32 resize-none focus:outline-none focus:border-sky-500 transition duration-200`}
         placeholder=""
       />
-      <label className="absolute right-3 -top-2.5 text-xs text-gray-600 bg-white px-1 peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-purple-500">
+      <label className="absolute right-3 -top-2.5 text-xs text-gray-600 bg-white px-1 peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-xs peer-focus:text-sky-500">
         {label}
       </label>
       {error && <p className="text-red-600 text-xs mt-1">{error.message}</p>}

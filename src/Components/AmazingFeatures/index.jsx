@@ -1,49 +1,3 @@
-const features = [
-  {
-    icon: LuShield,
-    color: "text-purple-600",
-    title: "خدمات پس از فروش عالی",
-    description:
-      "تمامی محصولات دارای ۵۵۵ روز وارانتی تعویض هستند؛ یعنی در صورت خرابی، محصول تعویض می‌شود نه تعمیر.",
-  },
-  {
-    icon: LuTruck,
-    color: "text-teal-600",
-    title: "ارسال رایگان",
-    description:
-      "شاردر محصولات را با ارسال کاملاً رایگان و بدون نگرانی به مشتریان تحویل می‌دهد.",
-  },
-  {
-    icon: LuCreditCard,
-    color: "text-purple-600",
-    title: "شرایط پرداخت عالی",
-    description:
-      "برای عاملین خرید و نمایندگان، شرایط پرداخت بسیار منعطف و قابل اجرا در نظر گرفته شده است.",
-  },
-  {
-    icon: LuHeadphones,
-    color: "text-teal-600",
-    title: "پشتیبانی درجه یک",
-    description:
-      "پاسخگویی سریع و راهنمایی کامل توسط کارشناسان و مسئولین کارخانه شاردر.",
-  },
-  {
-    icon: LuRotateCcw,
-    color: "text-purple-600",
-    title: "تضمین بازگشت وجه",
-    description:
-      "برای تجربه خرید مطمئن، شاردر تضمین بازگشت وجه را فراهم کرده است.",
-  },
-  {
-    icon: LuFactory,
-    color: "text-teal-600",
-    title: "تولید OEM با برند شما",
-    description:
-      "در کارخانه شاردر با بهترین متریال، محصول خود را با برند اختصاصی تولید کنید.",
-  },
-];
-import Image from "next/image";
-
 import {
   LuShield,
   LuTruck,
@@ -52,78 +6,118 @@ import {
   LuRotateCcw,
   LuFactory,
 } from "react-icons/lu";
+import AmazingFeaturesSlider from "./AmazingSlider";
 
-export default function AmazingFeatures() {
+const features = [
+  {
+    icon: LuShield,
+    color: "text-sky-500",
+    title: "خدمات پس از فروش عالی",
+    description:
+      "تمامی محصولات دارای ۵۵۵ روز وارانتی تعویض هستند؛ یعنی در صورت خرابی، محصول تعویض می‌شود نه تعمیر.",
+  },
+  {
+    icon: LuTruck,
+    color: "text-orange-500",
+    title: "ارسال رایگان",
+    description:
+      "شاردر محصولات را با ارسال کاملاً رایگان و بدون نگرانی به مشتریان تحویل می‌دهد.",
+  },
+  {
+    icon: LuCreditCard,
+    color: "text-sky-500",
+    title: "شرایط پرداخت عالی",
+    description:
+      "برای عاملین خرید و نمایندگان، شرایط پرداخت بسیار منعطف و قابل اجرا در نظر گرفته شده است.",
+  },
+  {
+    icon: LuHeadphones,
+    color: "text-orange-500",
+    title: "پشتیبانی درجه یک",
+    description:
+      "پاسخگویی سریع و راهنمایی کامل توسط کارشناسان و مسئولین کارخانه شاردر.",
+  },
+  {
+    icon: LuRotateCcw,
+    color: "text-sky-500",
+    title: "تضمین بازگشت وجه",
+    description:
+      "برای تجربه خرید مطمئن، شاردر تضمین بازگشت وجه را فراهم کرده است.",
+  },
+  {
+    icon: LuFactory,
+    color: "text-orange-500",
+    title: "تولید OEM با برند شما",
+    description:
+      "در کارخانه شاردر با بهترین متریال، محصول خود را با برند اختصاصی تولید کنید.",
+  },
+];
+
+const AmazingFeatures = () => {
   return (
     <section
       dir="rtl"
-      className="relative py-24 px-4 bg-gray-50 overflow-hidden"
+      className="relative py-16 px-4 sm:px-10 bg-gray-100 overflow-hidden"
     >
-      {/* پس‌زمینه بسیار سبک */}
-      <div className="absolute top-0 left-0 w-52 h-52 bg-purple-200 opacity-10 blur-3xl rounded-full" />
-      <div className="absolute bottom-0 right-0 w-40 h-40 bg-teal-300 opacity-10 blur-3xl rounded-full" />
+      {/* پس‌زمینه‌های ملایم */}
+      <div className="absolute top-0 left-0 w-44 h-44 bg-sky-200 opacity-20 rounded-full -translate-x-1/3 -translate-y-1/3 pointer-events-none select-none" />
+      <div className="absolute bottom-0 right-0 w-36 h-36 bg-teal-300 opacity-10 blur-3xl rounded-full pointer-events-none select-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* عنوان و توضیحات */}
-        <div className="text-center mb-16">
-          <h2 className="inline-block text-sm font-medium px-4 py-1.5 bg-gradient-to-b from-purple-600 to-teal-500 text-white rounded-full shadow-sm">
-            محصولات حرفه‌ای شاردر
+        {/* عنوان */}
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="inline-block text-base font-medium px-4 py-2 bg-gradient-to-b from-sky-400 to-gray-600 text-white rounded-2xl shadow-sm select-none">
+            شاردر ، انتخاب هر خانم ایرانی برای آشپزخانه
           </h2>
-          <h1 className="text-4xl font-extrabold text-gray-800 mt-5 leading-tight">
-            چرخ گوشت <span className="text-teal-500">هوشمند</span> شاردر
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mt-6 leading-tight">
+            چرخ گوشت های خانگی
+            <span className="text-sky-600 inline-block mx-3">شاردر</span>
           </h1>
-          <p className="text-base text-gray-600 max-w-xl mx-auto mt-3">
-            ترکیبی از{" "}
-            <span className="text-purple-600 font-semibold">نوآوری</span> و{" "}
-            <span className="text-teal-600 font-semibold">کیفیت</span> برای
-            آشپزخانه‌ای آینده‌نگر
+          <p className="text-sm sm:text-base text-gray-600 mt-3 max-w-xl mx-auto">
+            &nbsp; ترکیبی از
+            <span className="text-sky-500 font-bold text-lg sm:text-xl">
+              نوآوری&nbsp;
+            </span>
+            و&nbsp;
+            <span className="text-orange-500 font-bold text-lg sm:text-xl">
+              کیفیت&nbsp;
+            </span>
+            برای آشپزخانه‌ای آینده‌نگر
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* ویژگی‌ها */}
-          <div className="grid sm:grid-cols-2 gap-10">
-            {features?.map((item, index) => (
+        {/* لیست ویژگی‌ها و اسلایدر */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          {/* لیست ویژگی‌ها */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-13 gap-x-5">
+            {features.map((item, index) => (
               <div
                 key={index}
-                className="bg-white shadow py-10 px-6 rounded-xl border border-gray-100 hover:shadow-md transition duration-200"
+                className="bg-white shadow py-6 px-5 rounded-xl border border-gray-100 hover:shadow-lg transition duration-300"
               >
-                <div className="flex items-center gap-3 mb-2">
-                  <item.icon className={`w-6 h-6 ${item.color}`} />
-                  <h3 className="text-lg font-semibold text-gray-800">
+                <div className="flex items-center gap-5 mb-2">
+                  <item.icon
+                    className={`w-6 h-6 sm:w-7 sm:h-7 ${item.color}`}
+                  />
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-800">
                     {item.title}
                   </h3>
                 </div>
-                <p className="text-sm text-gray-600 mt-1">{item.description}</p>
+                <p className="text-xs sm:text-sm mt-4 text-gray-600 leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
 
-          {/* تصویر و متن */}
-          <div className="relative p-6 sm:p-8 rounded-3xl bg-white shadow-xl">
-            <Image
-              src="/images/AmazingFeatures/amazing.webp"
-              alt="چرخ گوشت هوشمند شاردر"
-              width={300}
-              height={300}
-              className="mx-auto rounded-xl"
-              priority
-            />
-            <div className="text-center mt-6 space-y-2">
-              <h2 className="text-lg sm:text-2xl font-bold text-gray-800">
-                <span className="text-teal-600">شاردر</span>، انقلابی در
-                آشپزخانه
-              </h2>
-              <p className="text-sm text-gray-500">
-                گارانتی ۵ ساله + خدمات پس از فروش ممتاز
-              </p>
-              <span className="inline-block mt-3 px-6 py-2 bg-gradient-to-r from-purple-600 to-teal-500 text-white font-semibold rounded-full shadow-md hover:scale-105 transition-transform duration-200">
-                شاردر، نبض آشپزخانه هر ایرانی
-              </span>
-            </div>
+          {/* اسلایدر */}
+          <div className="mt-6 lg:mt-0">
+            <AmazingFeaturesSlider />
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default AmazingFeatures;

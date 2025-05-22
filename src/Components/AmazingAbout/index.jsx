@@ -6,8 +6,6 @@ import {
   DollarSign,
 } from "lucide-react";
 
-export const dynamic = "force-dynamic";
-
 const iconMap = {
   building: Building2,
   copyright: Copyright,
@@ -57,29 +55,32 @@ const services = [
 
 const AmazingAbout = () => {
   return (
-    <section className="w-full bg-gradient-to-br from-white via-purple-50 to-teal-50 py-24 px-6 md:px-16 rtl text-right">
+    <section className="w-full bg-gradient-to-b from-gray-200 via-gray-100 to-gray-50 py-24 px-6 md:px-16 rtl text-right">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-extrabold text-center text-transparent bg-gradient-to-r from-teal-600 to-purple-600 bg-clip-text mb-12 drop-shadow-lg">
-          خدمات ما ، قدرت{" "}
-          <span className="text-rose-600 inline-block mx-2">آشپزخانه</span>
-          شماست
-        </h2>
+        <section className="bg-sky-500 text-white py-20 px-6 text-center rounded-2xl mb-15 mt-1">
+          <h1 className="text-4xl font-extrabold mb-6 leading-snug">
+            خدمات ما قدرت آشپزخانه شماست
+          </h1>
+          <p className="text-lg md:text-xl max-w-2xl mx-auto text-white">
+            تجربه ای بی نظیر همراه با شاردر
+          </p>
+        </section>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 ">
           {services.map((service, idx) => {
             const Icon = iconMap[service.icon];
             return (
               <div
                 key={idx}
-                className="group relative p-8 rounded-3xl bg-white/60 backdrop-blur-xl border border-purple-100 shadow-xl transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-br hover:from-sky-50 hover:to-rose-50 flex flex-col justify-center items-center"
+                className="group  relative bg-white border border-gray-300 rounded-2xl shadow-xl hover:shadow-lg transition duration-300 p-6 flex flex-col items-center text-center hover:scale-[1.03]"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-teal-600 to-purple-600 rounded-full flex items-center justify-center mb-6 shadow-lg transition-all group-hover:rotate-3 group-hover:scale-110">
-                  <Icon className="w-8 h-8 text-white" />
+                <div className="w-14 h-14 flex items-center justify-center rounded-full bg-sky-600 text-white mb-4 shadow-md  transition-colors duration-300">
+                  <Icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-purple-900 mb-2">
+                <h3 className="text-lg font-bold text-sky-600 mb-2">
                   {service.title}
                 </h3>
-                <p className="text-sm text-gray-700 leading-relaxed text-center">
+                <p className="text-sm text-gray-700 leading-relaxed">
                   {service.description}
                 </p>
               </div>

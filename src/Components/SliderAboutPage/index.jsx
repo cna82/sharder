@@ -21,9 +21,9 @@ const images = [
   "/images/HeroSection/Hero-section-5.webp",
 ];
 
-export default function AboutHero() {
+const AboutHero = () => {
   return (
-    <section className="w-full bg-gradient-to-br from-purple-100 via-white to-teal-100">
+    <section className="w-full bg-gray-200">
       {/* بخش معرفی */}
       <div className="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
         {/* تصویر اصلی */}
@@ -40,7 +40,7 @@ export default function AboutHero() {
 
         {/* توضیحات و لوگو */}
         <div className="text-center md:text-right text-black">
-          <div className="w-[180px] h-[180px] relative mx-auto md:mx-0 mb-6 drop-shadow-xl">
+          <div className="w-[180px] h-[180px] relative mx-auto md:mx-0  drop-shadow-xl">
             <Image
               src="/images/logo/logo.png"
               alt="لوگو شاردر"
@@ -51,7 +51,7 @@ export default function AboutHero() {
             />
           </div>
 
-          <p className="mt-6 text-base sm:text-lg md:text-xl text-gray-700 leading-8">
+          <p className=" text-base sm:text-lg md:text-xl text-gray-700 leading-8">
             این مجموعه با هدف تولید لوازم خانگی برقی آشپزخانه، در شرایط دشوار
             اقتصادی و دوران تحریم، با اتکا به دانش و همت متخصصان ایرانی شکل
             گرفته و تلاش می‌کند محصولاتی با کیفیت، قیمت مناسب و خدماتی شایسته به
@@ -109,4 +109,6 @@ export default function AboutHero() {
       </div>
     </section>
   );
-}
+};
+
+export default AboutHero;

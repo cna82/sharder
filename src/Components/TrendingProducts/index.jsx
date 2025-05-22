@@ -4,24 +4,6 @@ import Link from "next/link";
 
 // Hero Comp
 const TrendingProducts = () => {
-  // let features = [];
-
-  // try {
-  //   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-  //   const res = await fetch(`${baseUrl}/api/trending`, {
-  //     cache: "force-cache",
-  //   });
-
-  //   if (!res.ok) {
-  //     const text = await res.text();
-  //     console.error("❌ خطا در واکشی ویژگی‌ها:", text);
-  //   } else {
-  //     features = await res.json();
-  //   }
-  // } catch (error) {
-  //   console.error("🚫 مشکل در واکشی داده‌ها:", error);
-  // }
-
   const features = [
     {
       icon: "/images/Trending/Warranty.webp",
@@ -42,16 +24,16 @@ const TrendingProducts = () => {
   ];
 
   return (
-    <section className="bg-gray-50 py-14 px-4 md:px-10">
+    <section className="bg-gray-100 py-14 px-4 md:px-10">
       <div className="max-w-7xl mx-auto">
         {/* متن بالا */}
         <div className="mb-8 space-y-2">
-          <div className="w-full bg-gradient-to-r from-teal-100 via-white to-purple-100 py-4 shadow-inner border-y border-purple-300">
+          <div className="w-full bg-gradient-to-r from-sky-100 via-white to-blue-200 py-4 shadow-inner border-y border-purple-300  rounded-2xl">
             <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center space-y-2">
-              <div className="flex items-center justify-center gap-2 text-purple-600">
+              <div className="flex items-center justify-center gap-2 text-sky-600">
                 <span className="text-xl md:text-4xl font-bold tracking-wide">
                   محصولات
-                  <span className="text-teal-600"> پرفروش </span>
+                  <span className="text-blue-900"> پرفروش </span>
                   شاردر
                 </span>
               </div>
