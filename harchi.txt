@@ -6,7 +6,7 @@ seo =>{
     Faq section done .
     Single Product page done .
 }
-performnace >80
+performnace >85
 warning handling 
 meta datas
 build

@@ -21,8 +21,6 @@ export const metadata = {
     "شاردر محصولات",
     "شاردر لوازم خانگی",
   ],
-  viewport: "width=device-width, initial-scale=1",
-  themeColor: "#0056b3",
   charset: "utf-8",
   alternates: {
     canonical: "https://sharder.ir",
