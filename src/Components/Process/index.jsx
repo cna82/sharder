@@ -38,7 +38,7 @@ const Process = () => {
   return (
     <div className="w-full bg-gray-100">
       <section className="w-[80%] mx-auto py-40 px-10 text-center">
-        <h2 className="text-4xl font-bold text-sky-600 mb-2">
+        <h2 className="text-4xl font-bold text-sky-400 mb-2">
           فرآیند تولید محصولات در{" "}
           <span className="text-5xl text-blue-900 mb-5">شاردر</span>
         </h2>
@@ -83,10 +83,10 @@ const Process = () => {
                 key={index}
                 className="flex flex-col gap-2 items-center text-center w-full md:w-auto"
               >
-                <div className="flex items-center justify-center w-16 h-16 mt-[-1rem] rounded-full bg-sky-700 mb-8 shadow-md">
+                <div className="flex items-center justify-center w-16 h-16 mt-[-1rem] rounded-full bg-sky-400 mb-8 shadow-md">
                   {step.icon}
                 </div>
-                <h3 className="font-bold text-base text-gray-800 mb-1 !text-shadow-black">
+                <h3 className="font-bold text-base text-sky-800 mb-1 !text-shadow-black">
                   {step.title}
                 </h3>
                 <p className="text-sm text-gray-600 max-w-[160px]">

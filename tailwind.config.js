@@ -7,7 +7,7 @@ module.exports = {
         ticker: "ticker 30s linear infinite",
       },
       fontFamily: {
-        vazir: ["Vazir", "sans-serif"],
+        sans: ["var(--font-vazir)"], // ✅ ست کردن فونت پیش‌فرض
       },
       keyframes: {
         fadeIn: {

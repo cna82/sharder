@@ -51,7 +51,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section dir="rtl" className="bg-gray-100/90 py-16 px-4 md:px-8 relative">
+    <section dir="rtl" className="bg-gray-100 py-16 px-4 md:px-8 relative">
       {/* افکت خطوط مورب */}
       <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
         <svg className="w-full h-full">
@@ -75,13 +75,8 @@ export default function ContactForm() {
           <rect width="100%" height="100%" fill="url(#grid)" />
         </svg>
       </div>
-
-      {/* ذرات نورانی */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
-        <div className="animate-pulse bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 opacity-40"></div>
-      </div>
       <div className="relative z-10 max-w-4xl mx-auto bg-white p-6 md:p-10 rounded-2xl shadow-xl">
-        <h2 className="text-3xl font-bold text-center text-sky-600 mb-8">
+        <h2 className="text-3xl font-bold text-center text-sky-500 mb-8">
           فرم تماس با ما
         </h2>
 
@@ -144,7 +139,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className=" px-5 py-3 mt-6 cursor-pointer bg-sky-600 text-white font-bold text-lg rounded-lg focus:outline-none disabled:opacity-50"
+              className=" px-5 py-3 mt-6 cursor-pointer bg-sky-500 text-white font-bold text-lg rounded-lg focus:outline-none disabled:opacity-50"
             >
               {isSubmitting ? "در حال ارسال..." : "ارسال پیام"}
             </button>

@@ -1,10 +1,5 @@
-export const metadata = {
-  title: "شاردر محصولات ",
-  description: "صفحه اصلی سایت شاردر  و تولید کننده قطعات صنعتی ",
-};
-
-const AboutLayout = ({ children }) => {
+const SingleProductLayout = ({ children }) => {
   return <>{children}</>;
 };
 
-export default AboutLayout;
+export default SingleProductLayout;

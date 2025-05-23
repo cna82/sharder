@@ -1,2 +1,12 @@
-seo 
-performnace 
+seo =>{
+    home done.
+    about done .
+    contact done .
+    products done.
+    Faq section done .
+    Single Product page done .
+}
+performnace >80
+warning handling 
+meta datas
+build

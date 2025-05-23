@@ -73,7 +73,7 @@ const TrendingProducts = () => {
 
         {/* عنوان وسط */}
         <div className="text-center mt-14">
-          <h3 className="text-teal-600 text-2xl md:text-3xl font-extrabold mb-2">
+          <h3 className="text-sky-400 text-2xl md:text-3xl font-extrabold mb-2">
             آسودگی خاطر با محصولات شاردر
           </h3>
           <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto">

@@ -12,11 +12,11 @@ export default function HeroSectionAbout() {
   ];
 
   return (
-    <section className="w-full bg-gray-200 py-20 px-6 md:px-12">
+    <section className="w-full bg-gray-100 py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         {/* متن سمت راست */}
         <div className="text-right space-y-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-relaxed bg-gradient-to-r from-sky-500 to-sky-700 bg-clip-text text-transparent drop-shadow-md">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-relaxed bg-gradient-to-r from-sky-500 to-sky-500 bg-clip-text text-transparent drop-shadow-md">
             تولیدی
             <span className="text-gray-800 inline-block mx-2 text-3xl sm:text-3xl md:text-5xl">
               شاردر

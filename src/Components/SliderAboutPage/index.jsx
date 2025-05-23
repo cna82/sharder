@@ -12,9 +12,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// تصاویر گالری کارخانه
 const images = [
-  "/images/HeroSection/Hero-section-1.webp",
   "/images/HeroSection/Hero-section-2.webp",
   "/images/HeroSection/Hero-section-3.webp",
   "/images/HeroSection/Hero-section-4.webp",
@@ -23,35 +21,37 @@ const images = [
 
 const AboutHero = () => {
   return (
-    <section className="w-full bg-gray-200">
+    <section className="w-full bg-gray-100">
       {/* بخش معرفی */}
-      <div className="max-w-7xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
-        {/* تصویر اصلی */}
-        <div className="relative w-full h-[320px] sm:h-[400px] md:h-[450px] rounded-3xl overflow-hidden shadow-2xl">
+      <div className="max-w-7xl mx-auto px-4 py-16 flex flex-col-reverse md:grid md:grid-cols-2 gap-10 items-center">
+        {/* تصویر چرخ گوشت (در موبایل پایین، در دسکتاپ سمت چپ) */}
+        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[450px] rounded-3xl overflow-hidden shadow-2xl order-3 md:order-1">
           <Image
             src="/images/HeroAbout/haro.webp"
             alt="چرخ گوشت صنعتی"
             fill
-            priority // مهم برای LCP
+            priority
             sizes="(max-width: 768px) 100vw, 50vw"
             className="rounded-3xl object-cover"
           />
         </div>
 
-        {/* توضیحات و لوگو */}
-        <div className="text-center md:text-right text-black">
-          <div className="w-[180px] h-[180px] relative mx-auto md:mx-0  drop-shadow-xl">
+        {/* توضیحات و لوگو (در موبایل بالا) */}
+        <div className="text-center md:text-right text-black flex flex-col gap-6 order-1 md:order-2">
+          {/* لوگو */}
+          <div className="w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] relative mx-auto md:mx-0 drop-shadow-xl">
             <Image
               src="/images/logo/logo.png"
               alt="لوگو شاردر"
               fill
               sizes="180px"
               className="object-contain"
-              priority // چون بالاست
+              priority
             />
           </div>
 
-          <p className=" text-base sm:text-lg md:text-xl text-gray-700 leading-8">
+          {/* متن */}
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-7 sm:leading-8">
             این مجموعه با هدف تولید لوازم خانگی برقی آشپزخانه، در شرایط دشوار
             اقتصادی و دوران تحریم، با اتکا به دانش و همت متخصصان ایرانی شکل
             گرفته و تلاش می‌کند محصولاتی با کیفیت، قیمت مناسب و خدماتی شایسته به
@@ -64,7 +64,7 @@ const AboutHero = () => {
         </div>
       </div>
 
-      {/* اسلایدر گالری کارخانه (دست‌نخورده از نظر طراحی) */}
+      {/* اسلایدر گالری کارخانه */}
       <div className="w-full py-14 px-4 md:px-20">
         <Swiper
           effect="coverflow"

@@ -5,8 +5,65 @@ import { redirect } from "next/navigation";
 
 export async function generateMetadata({ params }) {
   const product = await getProductById(params.id);
-  if (!product) return { title: "محصول یافت نشد" };
-  return { title: product.title };
+
+  if (!product) {
+    return {
+      title: "محصول یافت نشد - شاردر",
+      description:
+        "این محصول در شاردر یافت نشد. لطفا محصولات دیگر را مشاهده کنید.",
+      robots: "noindex, nofollow",
+      alternates: {
+        canonical: "https://sharder.ir/products",
+      },
+    };
+  }
+
+  return {
+    title: `${product.title} | شاردر`,
+    description: product.description
+      .map((feature) => feature.title)
+      .join("، ")
+      .slice(0, 160), // گرفتن 160 کاراکتر برای دسکریپشن
+    authors: [{ name: "شاردر | Sharder" }],
+    viewport: "width=device-width, initial-scale=1",
+    charset: "utf-8",
+    robots: "index, follow",
+    alternates: {
+      canonical: `https://sharder.ir/products/${params.id}`,
+    },
+    openGraph: {
+      type: "website",
+      title: `${product.title} | شاردر`,
+      description: product.description
+        .map((feature) => feature.title)
+        .join("، ")
+        .slice(0, 160),
+      url: `https://sharder.ir/products/${params.id}`,
+      siteName: "شاردر",
+      images: [
+        {
+          url: product.imgSrc,
+          width: 600,
+          height: 600,
+          alt: product.title,
+        },
+      ],
+      locale: "fa_IR",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.title} | شاردر`,
+      description: product.description
+        .map((feature) => feature.title)
+        .join("، ")
+        .slice(0, 160),
+      images: [product.imgSrc],
+      creator: "@sharder_ir",
+    },
+    alternates: {
+      canonical: "https://sharder.ir/products",
+    },
+  };
 }
 
 const ProductPage = async ({ params }) => {
@@ -45,13 +102,17 @@ const ProductPage = async ({ params }) => {
               <div className="space-y-4">
                 <div className="flex-col items-center gap-2" dir="ltr">
                   <span className="font-semibold text-teal-600 ">رنگ:</span>
-                  <span className="text-gray-700 inline-block mx-2">{product.color}</span>
+                  <span className="text-gray-700 inline-block mx-2">
+                    {product.color}
+                  </span>
                 </div>
                 <div className="flex-col items-center gap-2">
                   <span className="font-semibold text-teal-600">
-                    دسته‌بندی : 
+                    دسته‌بندی :
                   </span>
-                  <span className="text-gray-700 inline-block mx-2">{product.category}</span>
+                  <span className="text-gray-700 inline-block mx-2">
+                    {product.category}
+                  </span>
                 </div>
               </div>
 

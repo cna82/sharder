@@ -176,3 +176,137 @@ const Header = () => {
 };
 
 export default Header;
+
+
+
+
+// "use client";
+// import { useState } from "react";
+// import Image from "next/image";
+// import Link from "next/link";
+// import { Menu, X, ChevronDown } from "lucide-react";
+// import { usePathname } from "next/navigation";
+
+// const Header = () => {
+//   const pathname = usePathname();
+//   const [menuOpen, setMenuOpen] = useState(false);
+//   const [productMenuOpen, setProductMenuOpen] = useState(false);
+//   const routeRegex = /^\/($|products($|\/.+)|contact|about$)/;
+//   const shouldShowLayout = routeRegex.test(pathname);
+
+//   if (!shouldShowLayout) return null;
+
+//   return (
+//     <header className="sticky top-0 z-50 bg-gray-400 text-sky-300 shadow-md border-b border-sky-200">
+//       <div className="max-w-7xl mx-auto relative flex items-center justify-between px-4 py-3">
+//         {/* Nav - Right */}
+//         <nav className="hidden md:flex items-center gap-6 text-[15px] font-semibold text-sky-200">
+//           <Link href="/" className={pathname === "/" ? "text-white underline" : "hover:text-white transition"}>
+//             صفحه اصلی
+//           </Link>
+//           <div className="relative group">
+//             <button
+//               onClick={() => setProductMenuOpen(!productMenuOpen)}
+//               className="flex items-center gap-1 hover:text-white transition"
+//             >
+//               محصولات <ChevronDown size={16} />
+//             </button>
+//             {productMenuOpen && (
+//               <div className="absolute top-full right-0 mt-2 bg-white text-sky-700 rounded-md shadow-md z-30 w-44">
+//                 <Link href="/products" className="block px-4 py-2 hover:bg-sky-50 text-sm">
+//                   لیست محصولات
+//                 </Link>
+//                 <Link
+//                   href="/pdf"
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                   className="block px-4 py-2 hover:bg-sky-50 text-sm"
+//                 >
+//                   کاتالوگ محصولات
+//                 </Link>
+//               </div>
+//             )}
+//           </div>
+//           <Link href="/about" className={pathname === "/about" ? "text-white underline" : "hover:text-white transition"}>
+//             درباره ما
+//           </Link>
+//           <Link href="/contact" className={pathname === "/contact" ? "text-white underline" : "hover:text-white transition"}>
+//             تماس با ما
+//           </Link>
+//         </nav>
+
+//         {/* Center Text */}
+//         <div className="absolute left-1/2 transform -translate-x-1/2 text-center">
+//           <p className="text-xl  text-sky-200 font-bold whitespace-nowrap">
+//             شرکت فیدار تجارت هیوا سازنده لوازم خانگی برقی
+//           </p>
+//         </div>
+
+//         {/* Logo - Left */}
+//         <div className="w-[120px] h-[50px] relative hidden md:block">
+//           <Link href="/" className="block w-full h-full relative">
+//             <Image
+//               src="/images/logo/logo.png"
+//               alt="لوگو"
+//               fill
+//               style={{ objectFit: "contain" }}
+//               className="hover:scale-105 transition-transform duration-300"
+//               priority
+//             />
+//           </Link>
+//         </div>
+
+//         {/* Mobile Header */}
+//         <div className="md:hidden flex justify-between items-center w-full">
+//           <button
+//             onClick={() => setMenuOpen(!menuOpen)}
+//             className="p-2 rounded-md text-sky-100 hover:bg-sky-300/20 transition"
+//             aria-label="Toggle Menu"
+//           >
+//             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+//           </button>
+//           <p className="text-[13px] text-blue-200 font-semibold text-center">
+//             فیدار تجارت هیوا
+//           </p>
+//           <div className="w-[40px] h-[40px] relative">
+//             <Link href="/" className="block w-full h-full relative">
+//               <Image
+//                 src="/images/logo/logo.png"
+//                 alt="لوگو"
+//                 fill
+//                 style={{ objectFit: "contain" }}
+//               />
+//             </Link>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Mobile Nav */}
+//       <div
+//         className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden bg-gray-300 text-sky-100 ${
+//           menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+//         }`}
+//       >
+//         <nav className="px-6 py-4 flex flex-col gap-3 text-[15px] font-medium">
+//           <Link href="/" onClick={() => setMenuOpen(false)} className="hover:text-white">
+//             صفحه اصلی
+//           </Link>
+//           <Link href="/products" onClick={() => setMenuOpen(false)} className="hover:text-white">
+//             لیست محصولات
+//           </Link>
+//           <Link href="/pdf" onClick={() => setMenuOpen(false)} className="hover:text-white">
+//             کاتالوگ محصولات
+//           </Link>
+//           <Link href="/about" onClick={() => setMenuOpen(false)} className="hover:text-white">
+//             درباره ما
+//           </Link>
+//           <Link href="/contact" onClick={() => setMenuOpen(false)} className="hover:text-white">
+//             تماس با ما
+//           </Link>
+//         </nav>
+//       </div>
+//     </header>
+//   );
+// };
+
+// export default Header;

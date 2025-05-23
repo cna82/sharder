@@ -16,21 +16,21 @@ const ClientMotionBox = ({ container }) => {
           viewport={{ once: true }}
           transition={{ delay: index * 0.2, duration: 0.5 }}
         >
-          <h2 className="text-xl font-semibold text-sky-600 mb-10">{title}</h2>
+          <h2 className="text-xl font-semibold text-sky-500 mb-10">{title}</h2>
           <div className="flex items-start gap-3 mb-2 text-gray-700 text-sm">
-            <MapPin className="text-sky-600 mt-1" />
+            <MapPin className="text-sky-500 mt-1" />
             <span>{address}</span>
           </div>
           <div className="flex flex-col gap-2 text-gray-700 text-sm">
             {phones.map((phone, i) => (
               <div className="flex items-center gap-3" key={i}>
-                <Phone className="text-sky-600" />
+                <Phone className="text-sky-500" />
                 <span>{phone}</span>
               </div>
             ))}
             {fax && (
               <div className="flex items-center gap-3">
-                <User className="text-sky-600" />
+                <User className="text-sky-500" />
                 <span>{fax}</span>
               </div>
             )}

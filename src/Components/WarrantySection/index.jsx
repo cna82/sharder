@@ -20,7 +20,7 @@ const WarrantySection = () => {
   return (
     <section
       dir="rtl"
-      className="bg-gradient-to-b from-gray-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-12 border-t-[2px] border-sky-400 "
+      className="bg-gray-100  py-16 px-4 sm:px-6 lg:px-12 border-t-[2px] border-sky-400 "
     >
       <div className="max-w-7xl mx-auto space-y-16">
         {/* معرفی */}
@@ -68,7 +68,7 @@ const WarrantySection = () => {
         </div>
 
         {/* استثناها */}
-        <div className="bg-gradient-to-tr from-sky-600 to-blue-400 text-white rounded-2xl p-8 space-y-6 shadow-md">
+        <div className="bg-gradient-to-tr from-sky-400 to-blue-300 text-white rounded-2xl p-8 space-y-6 shadow-md">
           <h3 className="text-2xl font-bold flex items-center gap-2">
             <FaRegTimesCircle className="text-red-500" />
             مواردی که شامل گارانتی نمی‌شود
