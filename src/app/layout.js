@@ -1,6 +1,6 @@
 // imports
 import "./globals.css";
-import ClientLayout from "@/components/ClientLayout";
+import ClientLayout from "@/Components/ClientLayout";
 import { dir } from "i18next";
 import Head from "next/head";
 import Script from "next/script";
