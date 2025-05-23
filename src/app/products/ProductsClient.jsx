@@ -14,9 +14,11 @@ const ProductCard = React.memo(({ product }) => (
           src={product.imgSrc}
           alt={product.title}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-contain p-6 transition-transform duration-500 group-hover:scale-110"
           loading="lazy"
         />
+
         <div className="absolute inset-0 group-hover:opacity-100 opacity-0 backdrop-blur-sm bg-white/30 transition-opacity duration-300 flex items-center justify-center">
           <span className="text-gray-900 text-sm sm:text-base font-semibold">
             مشاهده جزئیات

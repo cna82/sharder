@@ -17,16 +17,16 @@ const Header = () => {
       className="sticky top-0 z-50 bg-gray-100 border-b border-sky-600 shadow-md"
       dir="ltr"
     >
-      {/* موبایل: متن شرکت بالای همه */}
-      <div className="md:hidden bg-gray-100 border-b border-sky-600 text-center py-2">
+      {/* موبایل + تبلت: متن شرکت بالای همه با خط زیرش */}
+      <div className="lg:hidden bg-gray-100 border-b border-sky-600 text-center py-2">
         <span className="text-sm font-semibold text-gray-600">
           شرکت فیدار تجارت هیوا سازنده لوازم خانگی برقی
         </span>
       </div>
 
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2 md:py-3 relative">
+      <div className="max-w-full mx-auto flex items-center justify-between px-4 py-2 lg:py-3 relative">
         {/* لوگو دسکتاپ */}
-        <div className="hidden md:block w-[120px] h-[50px] relative">
+        <div className="hidden lg:block w-[120px] h-[50px] relative">
           <Link href="/" className="block w-full h-full relative">
             <Image
               src="/images/logo/logo.png"
@@ -40,14 +40,14 @@ const Header = () => {
         </div>
 
         {/* متن وسط دسکتاپ */}
-        <div className="hidden md:block absolute left-1/2 -translate-x-1/2 text-center">
+        <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 text-center">
           <span className="text-base font-semibold text-gray-600 whitespace-nowrap">
             شرکت فیدار تجارت هیوا سازنده لوازم خانگی برقی
           </span>
         </div>
 
         {/* منو دسکتاپ */}
-        <nav className="hidden md:flex items-center gap-6 text-lg font-semibold text-sky-600 ltr:flex-row-reverse">
+        <nav className="hidden lg:flex items-start gap-6 text-lg font-semibold text-sky-600 ltr:flex-row-reverse">
           <Link
             href="/"
             className={`relative group px-1 ${
@@ -113,8 +113,8 @@ const Header = () => {
           </Link>
         </nav>
 
-        {/* موبایل: لوگو و دکمه منو کنار هم سمت راست */}
-        <div className="md:hidden flex items-center gap-2 w-full px-3 justify-center">
+        {/* موبایل + تبلت: لوگو و دکمه منو سمت راست */}
+        <div className="lg:hidden flex items-center gap-2 w-full px-3 justify-center">
           <Link href="/" className="w-[110px] h-[36px] relative flex-shrink-0">
             <Image
               src="/images/logo/logo.png"
@@ -130,14 +130,18 @@ const Header = () => {
             className="p-2 rounded-md text-sky-600 hover:bg-sky-100 transition-colors flex items-center justify-center"
             aria-label="Toggle Menu"
           >
-            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {menuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
 
-      {/* موبایل منو کشویی */}
+      {/* منوی موبایل + تبلت */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white border-t border-sky-600 ${
+        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white border-t border-sky-600 ${
           menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >

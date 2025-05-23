@@ -25,7 +25,6 @@ export async function generateMetadata({ params }) {
       .join("، ")
       .slice(0, 160), // گرفتن 160 کاراکتر برای دسکریپشن
     authors: [{ name: "شاردر | Sharder" }],
-    viewport: "width=device-width, initial-scale=1",
     charset: "utf-8",
     robots: "index, follow",
     alternates: {
@@ -93,25 +92,25 @@ const ProductPage = async ({ params }) => {
             {/* بخش اطلاعات محصول */}
             <div className="p-8 flex flex-col gap-6 text-right border-r-2 border-sky-100">
               <div>
-                <h1 className="text-3xl text-center font-bold text-sky-600 mb-2">
+                <h1 className="text-2xl text-center font-bold text-sky-500 mb-2">
                   {product.title}
                 </h1>
-                <div className="h-[2px] w-full bg-gray-600 rounded-full"></div>
+                <div className="h-[2px] w-full bg-sky-200 rounded-full"></div>
               </div>
 
               <div className="space-y-4">
-                <div className="flex-col items-center gap-2" dir="ltr">
-                  <span className="font-semibold text-teal-600 ">رنگ:</span>
+                <div className="flex-col items-center gap-2">
                   <span className="text-gray-700 inline-block mx-2">
                     {product.color}
                   </span>
+                  <span className="font-semibold text-teal-600 ">: رنگ</span>
                 </div>
                 <div className="flex-col items-center gap-2">
-                  <span className="font-semibold text-teal-600">
-                    دسته‌بندی :
-                  </span>
                   <span className="text-gray-700 inline-block mx-2">
                     {product.category}
+                  </span>
+                  <span className="font-semibold text-teal-600">
+                    : دسته‌بندی
                   </span>
                 </div>
               </div>
@@ -176,7 +175,7 @@ const ProductPage = async ({ params }) => {
                 <div className="mt-8">
                   <Link
                     href="/products"
-                    className="inline-block px-6 py-3 text-white bg-sky-600 hover:bg-sky-700 transition rounded-full shadow-md"
+                    className="inline-block px-6 py-3 text-white bg-sky-400 hover:bg-sky-700 transition rounded-full shadow-md"
                   >
                     بازگشت به محصولات
                   </Link>

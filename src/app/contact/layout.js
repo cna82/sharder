@@ -46,10 +46,6 @@ export const metadata = {
     icon: "/images/favicon.png",
     apple: "/images/favicon.png",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
   authors: [{ name: "شرکت شاردر | Sharder", url: "https://sharder.ir" }],
   robots: {
     index: true,
