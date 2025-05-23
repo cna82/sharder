@@ -2,7 +2,6 @@
 import "./globals.css";
 import ClientLayout from "@/Components/ClientLayout";
 import { dir } from "i18next";
-import Head from "next/head";
 import Script from "next/script";
 
 // meta datas
@@ -148,14 +147,6 @@ const faqJsonLd = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir={dir("fa")}>
-      <Head>
-        {/* Font (اختیاری اما زیبا) */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-
       <body>
         {/* Structured Data */}
         <Script
