@@ -194,7 +194,7 @@ const Header = () => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const routeRegex = /^\/($|products($|\/.+)|contact|about$|pdf)/;
+  const routeRegex = /^\/($|products($|\/.+)|contact|about$)/;
   if (!routeRegex.test(pathname)) return null;
 
   return (

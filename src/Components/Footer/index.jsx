@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import {
   FaInstagram,
   FaTelegramPlane,
-  FaLinkedinIn,
   FaWhatsapp,
   FaMapMarkerAlt,
   FaPhone,
