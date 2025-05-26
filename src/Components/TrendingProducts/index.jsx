@@ -53,15 +53,15 @@ const TrendingProducts = () => {
 
         {/* تصاویر محصولات */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-          {[1, 2, 3, 4].map((num) => (
+          {[3, 5, 6, 1].map((num,index) => (
             <div
               key={num}
               className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
             >
               <Link href={`/products/${num}`}>
                 <Image
-                  src={`/images/Trending/trending-${num}.webp`}
-                  alt={`product-${num}`}
+                  src={`/images/Trending/trending-${index+1}.webp`}
+                  alt={`product-${index+1}`}
                   width={500}
                   height={600}
                   className="w-full h-auto object-cover"

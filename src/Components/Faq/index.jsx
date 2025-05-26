@@ -42,7 +42,7 @@ const Faq = () => {
   return (
     <main className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-sky-300 to-blue-200 text-white py-20 px-6 text-center">
+      <section className="bg-sky-400/70 text-white py-20 px-6 text-center">
         <h1 className="text-4xl font-extrabold mb-6 leading-snug border-b border-white pb-5">
           <span className="text-5xl text-gray-800">شاردر</span>؛ جایی که{" "}
           <span className="text-5xl text-gray-800">قدرت</span> بی‌صدا می‌چرخه!

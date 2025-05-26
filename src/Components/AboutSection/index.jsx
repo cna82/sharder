@@ -9,7 +9,7 @@ const AboutSection = () => {
   return (
     <section className="w-full bg-gray-100 py-20 px-4">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-300 to-sky-300/40 text-white py-20 mb-25 px-6 text-center rounded-lg">
+      <section className="bg-sky-400/80 text-white py-20 mb-25 px-6 text-center rounded-lg">
         <h1 className="text-4xl font-extrabold mb-6 leading-snug border-b border-white pb-3">
           شاردر ؛ قدرت در قلب آشپزخانه
         </h1>

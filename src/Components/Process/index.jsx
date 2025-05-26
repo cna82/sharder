@@ -6,38 +6,38 @@ import {
   ShoppingCart,
 } from "lucide-react";
 
-const steps = [
-  {
-    title: "درخواست مواد خام اولیه",
-    description: "ثبت سفارش مواد اولیه مورد نیاز برای شروع فرآیند تولید",
-    icon: <Package className="w-6 h-6 text-white" />,
-  },
-  {
-    title: "تحویل به خط تولید مجموعه",
-    description: "انتقال مواد اولیه به خطوط تولید جهت پردازش",
-    icon: <Factory className="w-6 h-6 text-white" />,
-  },
-  {
-    title: "تولید قطعه",
-    description: "ساخت قطعات مورد نظر با استفاده از تجهیزات پیشرفته",
-    icon: <Hammer className="w-6 h-6 text-white" />,
-  },
-  {
-    title: "ارسال به انبار جهت بسته بندی",
-    description: "انتقال قطعات تولید شده به انبار برای بسته‌بندی نهایی",
-    icon: <Warehouse className="w-6 h-6 text-white" />,
-  },
-  {
-    title: "تحویل به واحد فروش",
-    description: "تحویل بسته‌بندی‌های نهایی به تیم فروش برای عرضه",
-    icon: <ShoppingCart className="w-6 h-6 text-white" />,
-  },
-];
+const NestedFaq = () => {
+  const steps = [
+    {
+      title: "درخواست مواد خام اولیه",
+      description: "ثبت سفارش مواد اولیه مورد نیاز برای شروع فرآیند تولید",
+      icon: <Package className=" md:w-10 md:h-10 w-7 h-7  text-white " />,
+    },
+    {
+      title: "تحویل به خط تولید مجموعه",
+      description: "انتقال مواد اولیه به خطوط تولید جهت پردازش",
+      icon: <Factory className="md:w-10 md:h-10 w-7 h-7 text-white " />,
+    },
+    {
+      title: "تولید قطعه",
+      description: "ساخت قطعات مورد نظر با استفاده از تجهیزات پیشرفته",
+      icon: <Hammer className="md:w-10 md:h-10 w-7 h-7 text-white " />,
+    },
+    {
+      title: "ارسال به انبار جهت بسته بندی",
+      description: "انتقال قطعات تولید شده به انبار برای بسته‌بندی نهایی",
+      icon: <Warehouse className="md:w-10 md:h-10 w-7 h-7 text-white " />,
+    },
+    {
+      title: "تحویل به واحد فروش",
+      description: "تحویل بسته‌بندی‌های نهایی به تیم فروش برای عرضه",
+      icon: <ShoppingCart className="md:w-10 md:h-10 w-7 h-7 text-white " />,
+    },
+  ];
 
-const Process = () => {
   return (
-    <div className="w-full bg-gray-100">
-      <section className="w-[80%] mx-auto py-40 px-10 text-center">
+    <div className="w-full bg-gray-50  ">
+      <section className="w-[95%]  mx-auto py-24 px-6 text-center">
         <h2 className="text-4xl font-bold text-sky-400 mb-2">
           فرآیند تولید محصولات در{" "}
           <span className="text-5xl text-blue-900 mb-5">شاردر</span>
@@ -46,52 +46,45 @@ const Process = () => {
           مراحل انجام تولید قطعه در شاردر
         </p>
 
-        <div className="relative w-full max-w-7xl mx-auto text-lg">
-          {/* خطوط منحنی وسط */}
-          <svg
-            viewBox="0 0 100 600"
-            preserveAspectRatio="none"
-            className="block md:hidden absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-8 z-0"
-          >
-            <path
-              d="M50,0 C90,100 10,200 50,300 S90,400 50,500 10,600 50,700"
-              fill="none"
-              stroke="#302e2e"
-              strokeWidth="2"
-              strokeDasharray="5 6"
-            />
-          </svg>
-
+        <div className="relative w-full">
+          {/* مسیر دسکتاپ */}
           <svg
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
-            className="hidden md:block absolute top-14 left-0 w-full h-10 z-0"
+            className="hidden md:block absolute top-20 left-0 w-full h-10 z-0"
           >
             <path
               d="M0,60 C150,0 150,120 300,60 S450,0 600,60 750,120 900,60 1050,0 1200,60"
               fill="none"
               stroke="#302e2e"
-              strokeWidth="3"
+              strokeWidth="2"
               strokeDasharray="6 8"
             />
           </svg>
 
-          {/* مراحل */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-15 relative z-10">
-            {steps?.map((step, index) => (
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+            {steps.map((step, index) => (
               <div
                 key={index}
-                className="flex flex-col gap-2 items-center text-center w-full md:w-auto"
+                className="flex flex-row md:flex-col  items-center md:text-center w-full md:w-auto relative"
               >
-                <div className="flex items-center justify-center w-16 h-16 mt-[-1rem] rounded-full bg-sky-400 mb-8 shadow-md">
+                {/* خط عمودی موبایل */}
+                {index !== steps.length - 1 && (
+                  <div className="block md:hidden absolute top-[4.5rem] right-[2rem] h-[60px] w-[1px] border-r-2 border-dashed border-gray-400  z-[-1]" />
+                )}
+
+                <div className="  flex items-center justify-center text-xl md:w-16 md:h-16  w-14 h-14 rounded-full bg-sky-500  shadow-md backdrop-blur-md shrink-0">
                   {step.icon}
                 </div>
-                <h3 className="font-bold text-base text-sky-800 mb-1 !text-shadow-black">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-gray-600 max-w-[160px]">
-                  {step.description}
-                </p>
+
+                <div className="mr-4 md:mr-0 text-right md:text-center md:mt-10">
+                  <h3 className="font-semibold text-lg text-black  mt-1 mb-1 md:mt-5">
+                    {step.title}
+                  </h3>
+                  <p className="text-md text-gray-600  max-w-[180px]">
+                    {step.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -101,4 +94,4 @@ const Process = () => {
   );
 };
 
-export default Process;
+export default NestedFaq;

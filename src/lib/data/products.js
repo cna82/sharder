@@ -2,6 +2,46 @@
 export const products = [
   {
     id: 1,
+    title: "چرخ گوشت سفید شاردر",
+    description: [
+      {
+        title: "توان مصرفی: 1800 وات ",
+      },
+      {
+        title: "مجهز به موتور گیربکسی قدرتمند",
+      },
+      {
+        title: "جنس تیغه:اسنیل ضد زنگ",
+      },
+      {
+        title: "دارای سری سوسیس ساز و کباب ساز ",
+      },
+      {
+        title: "دارای محفظه نگهداری اجزاء",
+      },
+      {
+        title: "مجهز به کلید برگشت جهت بازگرداندن گوشت ",
+      },
+      {
+        title: " دارای محفظه نگهدارنده گوشت",
+      },
+      {
+        title: "دارای پایه نگهدارنده سیم ",
+      },
+      {
+        title: "دارای دو شبکه مخصوص گوشت و سبزی",
+      },
+      {
+        title: "دارای پایه ضد لرزش و ضد لغزش",
+      },
+    ],
+    color: "سفید",
+    category: "ساده",
+    imgSrc: "/images/Products/product (13).webp",
+    isAvaiable: true,
+  },
+  {
+    id: 2,
     title: "چرخ گوشت مشکی شاردر",
     description: [
       {
@@ -41,7 +81,7 @@ export const products = [
     isAvaiable: true,
   },
   {
-    id: 2,
+    id: 3,
     title: "چرخ گوشت نقره‌ای شاردر",
     description: [
       {
@@ -81,7 +121,7 @@ export const products = [
     isAvaiable: true,
   },
   {
-    id: 3,
+    id: 4,
     title: "چرخ گوشت طوسی شاردر",
     description: [
       {
@@ -121,7 +161,7 @@ export const products = [
     isAvaiable: true,
   },
   {
-    id: 4,
+    id: 5,
     title: "چرخ گوشت طرح دریا شاردر",
     description: [
       {
@@ -161,7 +201,7 @@ export const products = [
     isAvaiable: true,
   },
   {
-    id: 5,
+    id: 6,
     title: "چرخ گوشت سفید شاردر",
     description: [
       {
@@ -201,7 +241,7 @@ export const products = [
     isAvaiable: true,
   },
   {
-    id: 6,
+    id: 7,
     title: "چرخ گوشت قرمز شاردر",
     description: [
       {
@@ -241,7 +281,7 @@ export const products = [
     isAvaiable: true,
   },
   {
-    id: 7,
+    id: 8,
     title: "چرخ گوشت طرح گل دار شاردر",
     description: [
       {
@@ -281,7 +321,7 @@ export const products = [
     isAvaiable: true,
   },
   {
-    id: 8,
+    id: 9,
     title: "چرخ گوشت بژ شاردر",
     description: [
       {
@@ -321,7 +361,7 @@ export const products = [
     isAvaiable: true,
   },
   {
-    id: 9,
+    id: 10,
     title: "چرخ گوشت طلایی شاردر",
     description: [
       {
@@ -361,7 +401,7 @@ export const products = [
     isAvaiable: true,
   },
   {
-    id: 10,
+    id: 11,
     title: "چرخ گوشت نارنجی شاردر",
     description: [
       {
@@ -401,7 +441,7 @@ export const products = [
     isAvaiable: true,
   },
   {
-    id: 11,
+    id: 12,
     title: "چرخ گوشت پلنگی شاردر",
     description: [
       {
@@ -441,7 +481,7 @@ export const products = [
     isAvaiable: true,
   },
   {
-    id: 12,
+    id: 13,
     title: "چرخ گوشت سبز شاردر",
     description: [
       {
@@ -480,6 +520,7 @@ export const products = [
     imgSrc: "/images/Products/product (12).webp",
     isAvaiable: true,
   },
+  
 ];
 
 // src/lib/data/products.js

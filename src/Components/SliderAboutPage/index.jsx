@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
@@ -19,53 +19,74 @@ const images = [
   "/images/HeroSection/Hero-section-5.webp",
 ];
 
-const AboutHero = () => {
+
+
+export default function ContactSection() {
   return (
-    <section className="w-full bg-gray-100">
-      {/* بخش معرفی */}
-      <div className="max-w-7xl mx-auto px-4 py-16 flex flex-col-reverse md:grid md:grid-cols-2 gap-10 items-center">
-        {/* تصویر چرخ گوشت (در موبایل پایین، در دسکتاپ سمت چپ) */}
-        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[450px] rounded-3xl overflow-hidden shadow-2xl order-3 md:order-1">
+    <>
+    <section className="w-full px-4 bg-gray-100 md:px-20 py-10 flex flex-col md:flex-row items-center justify-between gap-10">
+      {/* تصویر سمت چپ */}
+      <div className="flex-1 flex justify-center">
+        <div className="w-full h-auto max-w-md">
           <Image
-            src="/images/HeroAbout/haro.webp"
-            alt="چرخ گوشت صنعتی"
-            fill
-            priority
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="rounded-3xl object-cover"
+            src="/images/HeroAbout/hero-section-about.png"
+            alt="Top Illustration"
+            layout="responsive"
+            width={500}
+            height={500}
+            className="object-contain"
           />
-        </div>
-
-        {/* توضیحات و لوگو (در موبایل بالا) */}
-        <div className="text-center md:text-right text-black flex flex-col gap-6 order-1 md:order-2">
-          {/* لوگو */}
-          <div className="w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] relative mx-auto md:mx-0 drop-shadow-xl">
-            <Image
-              src="/images/logo/logo.png"
-              alt="لوگو شاردر"
-              fill
-              sizes="180px"
-              className="object-contain"
-              priority
-            />
-          </div>
-
-          {/* متن */}
-          <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-7 sm:leading-8">
-            این مجموعه با هدف تولید لوازم خانگی برقی آشپزخانه، در شرایط دشوار
-            اقتصادی و دوران تحریم، با اتکا به دانش و همت متخصصان ایرانی شکل
-            گرفته و تلاش می‌کند محصولاتی با کیفیت، قیمت مناسب و خدماتی شایسته به
-            مردم ایران ارائه دهد.
-            <br />
-            <br />
-            حمایت از تولید ملی، نقش مهمی در اشتغال‌زایی و رشد اقتصادی کشور دارد.
-            با ما همراه باشید.
-          </p>
         </div>
       </div>
 
-      {/* اسلایدر گالری کارخانه */}
-      <div className="w-full py-14 px-4 md:px-20">
+      {/* متن و امکانات */}
+      <div className="flex-1 text-center md:text-right">
+        <h2 className="text-2xl md:text-3xl font-extrabold mb-4 text-gray-900">
+          با هم در{" "}
+          <span className="text-sky-500  decoration-teal-500">ارتباطیم!</span>
+        </h2>
+
+        <p className="text-gray-800 leading-loose mb-4 text-sm md:text-base">
+          این مجموعه با هدف تولید لوازم خانگی برقی آشپزخانه، در شرایط دشوار
+          اقتصادی و دوران تحریم، با اتکا به دانش و همت متخصصان ایرانی شکل گرفته
+          و تلاش می‌کند محصولاتی با کیفیت، قیمت مناسب و خدماتی شایسته به مردم
+          ایران ارائه دهد.
+          <br />
+          <br />
+          حمایت از تولید ملی، نقش مهمی در اشتغال‌زایی و رشد اقتصادی کشور دارد.
+          با ما همراه باشید.
+        </p>
+
+        {/* امکانات */}
+        <div className="flex flex-col gap-4 md:flex-row md:gap-6 items-center md:items-stretch justify-center mb-8">
+          {/* کارت‌ها */}
+          {[
+            { src: "icon-1.svg", label: "ارسال رایگان محصول" },
+            { src: "icon-2.svg", label: "ضمانت بازگشت محصول" },
+            { src: "icon-3.svg", label: "بازگشت بخشی از مبلغ" },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-xl p-5 w-full md:w-64 text-center shadow-md hover:shadow-lg transition"
+            >
+              <div className="mx-auto mb-3 w-10 h-10 relative">
+                <Image
+                  src={`/images/HeroAbout/${item.src}`}
+                  alt={item.label}
+                  width={40}
+                  height={40}
+                />
+              </div>
+              <p className="font-medium text-gray-700 text-sm">{item.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+     
+    </section>
+     {/* اسلایدر گالری کارخانه */}
+     <div className="w-full py-14 px-4 bg-gray-100 md:px-20">
         <Swiper
           effect="coverflow"
           grabCursor
@@ -107,8 +128,7 @@ const AboutHero = () => {
           ))}
         </Swiper>
       </div>
-    </section>
+    </>
   );
-};
+}
 
-export default AboutHero;

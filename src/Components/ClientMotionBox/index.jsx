@@ -1,40 +1,179 @@
+
+// "use client";
+
+// import React from "react";
+// import { motion } from "framer-motion";
+// import { FiMapPin, FiPhone, FiUser, FiInstagram, FiMail } from "react-icons/fi";
+// import { RiWhatsappLine } from "react-icons/ri";
+
+// const getSocialIcon = (type, className) => {
+//   const props = { size: 22, className };
+//   switch (type) {
+//     case "instagram":
+//       return <FiInstagram {...props} />;
+//     case "whatsapp":
+//       return <RiWhatsappLine {...props} />;
+//     case "email":
+//       return <FiMail {...props} />;
+//     default:
+//       return null;
+//   }
+// };
+
+// const ClientMotionBox = ({ container }) => {
+//   return (
+//     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-15 px-4 md:px-8">
+//       {container?.map(({ title, address, phones, fax, social }, index) => (
+//         <motion.div
+//           key={index}
+//           className="bg-white p-6 rounded-2xl  flex flex-col gap-5 transition-all duration-300"
+          
+//           initial={{ opacity: 0, y: 30 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           transition={{ delay: index * 0.2, duration: 0.5 }}
+//         >
+//           <h2 className="text-xl font-semibold text-sky-500 text-center">{title}</h2>
+
+//           {!social && address && (
+//             <div
+              
+//               className="flex items-center gap-3 text-sky-500 hover:text-purple-600 text-sm transition-colors"
+//             >
+//               <FiMapPin size={22} className="min-w-[22px]" />
+//               <span className="text-black">{address}</span>
+//             </div>
+//           )}
+
+//           <div className="flex flex-col gap-5 text-sm">
+//             {social
+//               ? social.map((item, i) => (
+//                   <a
+//                     key={i}
+//                     href={item.link}
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     className={`flex items-center gap-3 text-sky-500 hover:${
+//                       item.type === "instagram"
+//                         ? "!text-purple-600"
+//                         : item.type === "whatsapp"
+//                         ? "text-green-600"
+//                         : "text-red-600"
+//                     } transition-colors`}
+//                   >
+//                     {getSocialIcon(item.type, "text-sky-500")}
+//                     <span className="text-black">{item.label}</span>
+//                   </a>
+//                 ))
+//               : phones.map((phone, i) => (
+//                   <a
+//                     key={i}
+//                     href={`tel:${phone}`}
+//                     className="flex items-center gap-3 text-sky-500 hover:text-purple-600 transition-colors"
+//                   >
+//                     <FiPhone size={22} className="min-w-[22px]" />
+//                     <span className="text-black">{phone}</span>
+//                   </a>
+//                 ))}
+//           </div>
+
+//           {!social && fax && (
+//             <div className="flex items-center gap-3 text-sky-500 hover:text-purple-600 text-sm transition-colors">
+//               <FiUser size={22} className="min-w-[22px]" />
+//               <span className="text-black">{fax}</span>
+//             </div>
+//           )}
+//         </motion.div>
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default ClientMotionBox;
+
+
+
+
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, User } from "lucide-react";
+import { FiMapPin, FiPhone, FiUser, FiInstagram, FiMail } from "react-icons/fi";
+import { RiWhatsappLine } from "react-icons/ri";
+
+const getSocialIcon = (type) => {
+  const props = { size: 22, className: "min-w-[22px]" }; // ارث‌بری از رنگ parent
+  switch (type) {
+    case "instagram":
+      return <FiInstagram {...props} />;
+    case "whatsapp":
+      return <RiWhatsappLine {...props} />;
+    case "email":
+      return <FiMail {...props} />;
+    default:
+      return null;
+  }
+};
 
 const ClientMotionBox = ({ container }) => {
   return (
-    <div className="grid md:grid-cols-3 gap-12">
-      {container?.map(({ title, address, phones, fax }, index) => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-8">
+      {container?.map(({ title, address, phones, fax, social }, index) => (
         <motion.div
           key={index}
-          className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-purple-300 flex-col gap-15 transition-all duration-300"
-          whileHover={{ scale: 1.05 }}
+          className="bg-white p-6 rounded-2xl shadow-sm flex flex-col gap-5 transition-all duration-300"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.2, duration: 0.5 }}
         >
-          <h2 className="text-xl font-semibold text-sky-500 mb-10">{title}</h2>
-          <div className="flex items-start gap-3 mb-2 text-gray-700 text-sm">
-            <MapPin className="text-sky-500 mt-1" />
-            <span>{address}</span>
+          <h2 className="text-xl font-semibold text-sky-500 text-center">{title}</h2>
+
+          {!social && address && (
+            <div className="flex items-center gap-3 text-sky-500 hover:text-purple-600 text-sm transition-colors">
+              <FiMapPin size={22} className="min-w-[22px]" />
+              <span className="text-black">{address}</span>
+            </div>
+          )}
+
+          <div className="flex flex-col gap-4 text-sm">
+            {social
+              ? social.map((item, i) => (
+                  <a
+                    key={i}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center gap-3 text-sky-500 hover:${
+                      item.type === "instagram"
+                        ? "text-purple-600"
+                        : item.type === "whatsapp"
+                        ? "text-green-600"
+                        : "text-red-600"
+                    } transition-colors`}
+                  >
+                    {getSocialIcon(item.type)}
+                    <span className="text-black">{item.label}</span>
+                  </a>
+                ))
+              : phones.map((phone, i) => (
+                  <a
+                    key={i}
+                    href={`tel:${phone}`}
+                    className="flex items-center gap-3 text-sky-500 hover:text-purple-600 transition-colors"
+                  >
+                    <FiPhone size={22} className="min-w-[22px]" />
+                    <span className="text-black">{phone}</span>
+                  </a>
+                ))}
           </div>
-          <div className="flex flex-col gap-2 text-gray-700 text-sm">
-            {phones.map((phone, i) => (
-              <div className="flex items-center gap-3" key={i}>
-                <Phone className="text-sky-500" />
-                <span>{phone}</span>
-              </div>
-            ))}
-            {fax && (
-              <div className="flex items-center gap-3">
-                <User className="text-sky-500" />
-                <span>{fax}</span>
-              </div>
-            )}
-          </div>
+
+          {!social && fax && (
+            <div className="flex items-center gap-3 text-sky-500 hover:text-purple-600 text-sm transition-colors">
+              <FiUser size={22} className="min-w-[22px]" />
+              <span className="text-black">{fax}</span>
+            </div>
+          )}
         </motion.div>
       ))}
     </div>
