@@ -22,9 +22,9 @@ const images = [
 const SliderAbout = () => {
   return (
     <>
-      <section className="w-full px-4 bg-gray-100 md:px-20 py-16 flex flex-col md:flex-row items-center justify-between gap-10">
+      <section className="w-full px-4 md:px-20 bg-gray-100 py-16 flex flex-col md:flex-row flex-wrap items-center justify-between gap-10 overflow-hidden">
         {/* تصویر سمت چپ */}
-        <div className="flex-1 flex justify-center">
+        <div className="flex-1 flex justify-center min-w-[300px]">
           <div className="w-full h-auto max-w-md">
             <Image
               src="/images/HeroAbout/hero-section-about.png"
@@ -37,8 +37,8 @@ const SliderAbout = () => {
         </div>
 
         {/* متن و امکانات */}
-        <div className="flex-1 text-center md:text-right">
-          <h2 className=" text-2xl md:text-3xl font-extrabold mb-4 text-orange-500">
+        <div className="flex-1 text-center md:text-right min-w-[300px]">
+          <h2 className="text-2xl md:text-3xl font-extrabold mb-4 text-orange-500">
             با هم در
             <span className="text-sky-500  decoration-teal-500 inline-block mx-1.5">
               ارتباطیم!
@@ -66,7 +66,6 @@ const SliderAbout = () => {
 
           {/* امکانات */}
           <div className="flex flex-col gap-4 md:flex-row md:gap-6 items-center md:items-stretch justify-center mb-8">
-            {/* کارت‌ها */}
             {[
               { src: "icon-1.svg", label: "ارسال رایگان محصول" },
               { src: "icon-2.svg", label: "ضمانت بازگشت محصول" },
@@ -94,7 +93,7 @@ const SliderAbout = () => {
       </section>
 
       {/* اسلایدر گالری کارخانه */}
-      <div className="w-full py-14 px-4 bg-gray-100 md:px-20">
+      <div className="w-full py-14 px-4 md:px-20 bg-gray-100 overflow-hidden">
         <Swiper
           effect="coverflow"
           grabCursor
@@ -115,7 +114,7 @@ const SliderAbout = () => {
             slideShadows: false,
           }}
           modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
-          className="max-w-10xl"
+          className="w-full"
         >
           {images.map((src, idx) => (
             <SwiperSlide
