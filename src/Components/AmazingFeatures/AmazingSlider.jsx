@@ -36,7 +36,7 @@ export default function AmazingFeaturesSlider() {
           <span className="text-sky-500">شاردر</span>، انقلابی در آشپزخانه
         </h2>
         <p className="text-sm text-gray-500">
-          وارانتی 555 روزه + خدمات پس از فروش عالی و بی نقص
+          وارانتی ۵۵۵ روزه + خدمات پس از فروش عالی و بی نقص
         </p>
         <span className="inline-block mt-3 px-4 py-2 sm:px-6 sm:py-2 bg-gradient-to-r from-sky-600 to-gray-500 text-white font-semibold rounded-full shadow-md hover:scale-105 transition-transform duration-200 text-sm sm:text-base">
           شاردر، نبض آشپزخانه هر ایرانی

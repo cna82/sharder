@@ -5,7 +5,7 @@ import { FaCheckCircle, FaRegTimesCircle, FaInfoCircle } from "react-icons/fa";
 // warranty comp
 const WarrantySection = () => {
   const terms = [
-    ["555 رو وارانتی یعنی عودت محصول بی قید و شرط.", "📜"],
+    ["۵۵۵ روز وارانتی یعنی عودت محصول بی قید و شرط.", "📜"],
     ["خدمات رایگان فقط در نمایندگی‌های مجاز شاردر ارائه می‌گردد.", "🛠️"],
     ["هزینه حمل دستگاه در صورت ارسال با گارانتی‌کننده است.", "🚚"],
     ["شرایط پرداخت انعطاف پذیر و قابل اجرا. ", "⚡"],
@@ -26,8 +26,11 @@ const WarrantySection = () => {
         {/* معرفی */}
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="space-y-6 text-gray-800">
-            <h2 className="text-4xl font-extrabold text-sky-600">
-              ضمانت‌نامه رسمی <span className="text-teal-600">شاردر</span>
+            <h2 className="font-cinema md:text-4xl text-3xl  font-extrabold text-sky-600">
+              ضـمـا نـت‌ نـامـه رسـمی{" "}
+              <span className="text-orange-500 inline-block  mx-1.5">
+                شاردر
+              </span>
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed">
               با ما خیالت از خرید راحت باشه. ضمانت‌نامه وارانتی محصولات شاردر با
@@ -68,7 +71,7 @@ const WarrantySection = () => {
         </div>
 
         {/* استثناها */}
-        <div className="bg-gradient-to-tr from-sky-400 to-blue-300 text-white rounded-2xl p-8 space-y-6 shadow-md">
+        <div className="bg-gradient-to-tr from-sky-500 to-blue-400 text-white rounded-2xl p-8 space-y-6 shadow-md">
           <h3 className="text-2xl font-bold flex items-center gap-2">
             <FaRegTimesCircle className="text-red-500" />
             مواردی که شامل گارانتی نمی‌شود
@@ -99,7 +102,10 @@ const WarrantySection = () => {
             </p>
             <p>
               <FaInfoCircle className="inline ml-3 text-orange-400" /> تماس با
-              خدمات : <strong dir="ltr">021 36917603</strong>
+              خدمات :{" "}
+              <strong dir="ltr">
+                <a href="tel:+989123456789">۰۲۱ ۳۶۹۱۷۶۰۳ </a>
+              </strong>
             </p>
           </div>
         </div>

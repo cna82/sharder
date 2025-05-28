@@ -7,7 +7,8 @@ module.exports = {
         ticker: "ticker 30s linear infinite",
       },
       fontFamily: {
-        sans: ["var(--font-vazir)"], // ✅ ست کردن فونت پیش‌فرض
+        sans: ["var(--font-vazir)"],
+         cinema: ["var(--font-cinema)"],
       },
       keyframes: {
         fadeIn: {

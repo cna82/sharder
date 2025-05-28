@@ -3,8 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
-export async function generateMetadata({ params }) {
-  const product = await getProductById(params.id);
+export async function generateMetadata(props) {
+  const { params } = await props;
+  const { id } = params;
+  const product = await getProductById(id);
 
   if (!product) {
     return {
@@ -18,26 +20,25 @@ export async function generateMetadata({ params }) {
     };
   }
 
+  const descriptionText = product.description
+    .map((feature) => feature.title)
+    .join("، ")
+    .slice(0, 160);
+
   return {
     title: `${product.title} | شاردر`,
-    description: product.description
-      .map((feature) => feature.title)
-      .join("، ")
-      .slice(0, 160), // گرفتن 160 کاراکتر برای دسکریپشن
+    description: descriptionText,
     authors: [{ name: "شاردر | Sharder" }],
     charset: "utf-8",
     robots: "index, follow",
     alternates: {
-      canonical: `https://sharder.ir/products/${params.id}`,
+      canonical: `https://sharder.ir/products/${id}`,
     },
     openGraph: {
       type: "website",
       title: `${product.title} | شاردر`,
-      description: product.description
-        .map((feature) => feature.title)
-        .join("، ")
-        .slice(0, 160),
-      url: `https://sharder.ir/products/${params.id}`,
+      description: descriptionText,
+      url: `https://sharder.ir/products/${id}`,
       siteName: "شاردر",
       images: [
         {
@@ -52,15 +53,9 @@ export async function generateMetadata({ params }) {
     twitter: {
       card: "summary_large_image",
       title: `${product.title} | شاردر`,
-      description: product.description
-        .map((feature) => feature.title)
-        .join("، ")
-        .slice(0, 160),
+      description: descriptionText,
       images: [product.imgSrc],
       creator: "@sharder_ir",
-    },
-    alternates: {
-      canonical: "https://sharder.ir/products",
     },
   };
 }

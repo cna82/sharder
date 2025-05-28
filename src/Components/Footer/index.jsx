@@ -51,7 +51,11 @@ const contactItems = [
   },
   {
     icon: <FaPhone className="ml-2 text-teal-600 flex-shrink-0" />,
-    content: <span dir="ltr">021-36917603</span>,
+    content: (
+      <span dir="ltr">
+        <a href="tel:02136917603"> ۰۲۱-۳۶۹۱۷۶۰۳</a>
+      </span>
+    ),
   },
   {
     icon: <FaPhone className="ml-2 text-teal-600 flex-shrink-0" />,
@@ -60,7 +64,9 @@ const contactItems = [
         <span className="leading-[25px]">
           ارتباط با مدیر فروش مجموعه :
           <br />
-          <span dir="ltr">0912 843 3187</span>
+          <span dir="ltr">
+            <a href="tel:09128433187">۰۹۱۲ ۸۴۳ ۳۱۸۷</a>
+          </span>
         </span>
       </>
     ),
@@ -78,7 +84,7 @@ const contactItems = [
   },
   {
     icon: <FaClock className="ml-2 text-teal-600 flex-shrink-0" />,
-    content: "شنبه تا چهارشنبه 8:00 تا 17:00",
+    content: "شنبه تا چهارشنبه ۸:۰۰ تا ۱۷:۰۰",
   },
 ];
 
@@ -105,7 +111,7 @@ const Footer = () => {
           />
           <p className="text-gray-600 leading-relaxed mb-4 text-sm">
             کارخانه تولید لوازم خانگی شاردر، پیشرو در طراحی و تولید محصولات
-            نوآورانه خانگی تاسیس شده در سال 1400 در صنعت لوازم خانگی و چرخ گوشت
+            نوآورانه خانگی تاسیس شده در سال ۱۴۰۰ در صنعت لوازم خانگی و چرخ گوشت
             است چرخ گوشت هایی مطمئن و بدون خطر ، امضای کار ماست
           </p>
           <div className="flex gap-3">

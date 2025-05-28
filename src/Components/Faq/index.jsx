@@ -21,7 +21,7 @@ const Faq = () => {
     },
     {
       question: "شرایط گارانتی محصولات چگونه است؟",
-      answer: "تمامی محصولات دارای 555 روز وارانتی بی قید و شرط می باشند.",
+      answer: "تمامی محصولات دارای ۵۵۵ روز وارانتی بی قید و شرط می باشند.",
     },
     {
       question: "نحوه استفاده صحیح از محصولات را از کجا یاد بگیرم؟",
@@ -42,13 +42,15 @@ const Faq = () => {
   return (
     <main className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <section className="bg-sky-400/70 text-white py-20 px-6 text-center">
-        <h1 className="text-4xl font-extrabold mb-6 leading-snug border-b border-white pb-5">
-          <span className="text-5xl text-gray-800">شاردر</span>؛ جایی که{" "}
-          <span className="text-5xl text-gray-800">قدرت</span> بی‌صدا می‌چرخه!
+      <section className="bg-sky-400 text-white py-20 px-6 text-center">
+        <h1 className="text-3xl md:text-4xl font-cinema font-extrabold mb-6 leading-snug border-b border-white pb-5">
+          <span className="text-4xl md:tetx-5xl text-yellow-200   ">شـاردر</span>؛ جـایـی
+          کـه <span className="text-4xl md:tetx-5xl text-yellow-200  ">قدرت</span> بـی‌ صـدا
+          مـی‌ چـرخـه !
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-700">
-          پیشرو در تولید و فروش چرخ‌گوشت‌های صنعتی و خانگی با کیفیت و بادوام
+          انتخابی مطمئن برای کسانی که کیفیت، پشتیبانی و دوام را در
+          کنار هم می‌خواهند.
         </p>
       </section>
 

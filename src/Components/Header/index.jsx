@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,45 +8,16 @@ import { Menu, X, ChevronDown } from "lucide-react";
 const Header = () => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showMobileBanner, setShowMobileBanner] = useState(true);
 
   const routeRegex = /^\/($|products($|\/.+)|contact|about$)/;
   if (!routeRegex.test(pathname)) return null;
 
-  // کنترل اسکرول فقط در موبایل
-  useEffect(() => {
-    const handleScroll = () => {
-      const isMobile = window.innerWidth < 1024;
-      setShowMobileBanner(!(isMobile && window.scrollY > 30));
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // اجرا در بارگذاری اولیه
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <header
-      className="sticky top-0 z-50 bg-gray-100 border-b border-sky-600 shadow-md"
+      className=" fixed w-full top-0 z-50 bg-gray-100 border-b py-1 border-sky-600 shadow-md"
       dir="ltr"
     >
-      {/* لوگوی بالایی فقط در موبایل و زمانی که showMobileBanner فعال باشد */}
-      <div
-        className={`lg:hidden transition-all duration-500 ease-in-out overflow-hidden ${
-          showMobileBanner ? "max-h-24 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="w-full flex justify-center py-2 border-b border-slate-600">
-          <Image
-            src="/images/logo/fidar-logo.png"
-            width={170}
-            height={70}
-            alt="شرکت فیدار تجارت هیوا"
-            className="object-contain"
-          />
-        </div>
-      </div>
+      {/* حذف لوگوی بزرگ موبایل بالا */}
 
       {/* نوار اصلی */}
       <div className="max-w-full mx-auto flex items-center justify-between px-4 py-2 lg:py-3 relative">
@@ -57,22 +28,20 @@ const Header = () => {
               src="/images/logo/logo.png"
               alt="لوگو"
               fill
+              sizes="(min-width: 1024px) 120px"
               style={{ objectFit: "contain" }}
-              className="hover:scale-110 transition-transform duration-500"
               priority
+              className="hover:scale-110 transition-transform duration-500"
             />
           </Link>
         </div>
 
         {/* دسکتاپ: لوگوی شرکت در وسط */}
         <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 text-center">
-          <Image
-            src="/images/logo/fidar-logo.png"
-            width={290}
-            height={80}
-            alt="شرکت فیدار تجارت هیوا"
-            className="object-contain mx-auto"
-          />
+          <h2 className="text-sky-700 font-IranNastaliq mt-6 font-bold  text-3xl">
+            شـرکـت <span className="text-slate-900">فـیدار</span> تجارت{" "}
+            <span className="text-slate-900">هـیوا</span>{" "}
+          </h2>
         </div>
 
         {/* دسکتاپ: منو */}
@@ -90,7 +59,9 @@ const Header = () => {
               src="/images/logo/logo.png"
               alt="لوگو"
               fill
+              sizes="(max-width: 1023px) 110px"
               style={{ objectFit: "contain" }}
+              className="hover:scale-110 transition-transform duration-500"
               priority
             />
           </Link>
@@ -112,14 +83,23 @@ const Header = () => {
       {/* موبایل: منوی بازشونده */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white border-t border-sky-600 ${
-          menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <nav
           className="px-6 py-4 flex flex-col gap-3 text-[15px] font-medium text-sky-600 w-full"
           dir="rtl"
         >
+          {/* لوگوی بالایی در منوی بازشونده */}
+          <div className="flex justify-center mb-4 border-b border-slate-600 pb-3">
+            <h2 className="text-sky-700 font-IranNastaliq mt-6 font-bold  text-2xl">
+              شـرکـت <span className="text-slate-900">فـیدار</span> تجارت{" "}
+              <span className="text-slate-900">هـیوا</span>{" "}
+            </h2>
+          </div>
+
           {[
+            // لینک‌ها
             { href: "/", label: "صفحه اصلی" },
             { href: "/products", label: "لیست محصولات" },
             { href: "/pdf", label: "کاتالوگ محصولات" },
@@ -130,7 +110,7 @@ const Header = () => {
               key={href}
               href={href}
               onClick={() => setMenuOpen(false)}
-              className={`py-2 px-4 rounded-md hover:bg-gray-700 transition-all ${
+              className={`py-2 px-4 rounded-md hover:bg-gray-700 text-center transition-all ${
                 pathname === href ? "bg-gray-300/50 text-sky-700" : ""
               }`}
             >
@@ -143,7 +123,6 @@ const Header = () => {
   );
 };
 
-// ✅ کامپوننت لینک برای اجتناب از تکرار کد
 const NavLink = ({ href, label, currentPath }) => (
   <Link
     href={href}
@@ -160,7 +139,6 @@ const NavLink = ({ href, label, currentPath }) => (
   </Link>
 );
 
-// ✅ منوی کشویی محصولات
 const DropdownMenu = () => (
   <div className="relative group">
     <button className="flex items-center gap-1 hover:text-gray-700 transition-colors">

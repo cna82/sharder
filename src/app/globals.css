@@ -27,6 +27,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Vazir", Arial, Helvetica, sans-serif;
+  padding-top: 50px !important;
 }
 
 @font-face {
@@ -34,6 +35,28 @@ body {
   src: url('/fonts/Vazir.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: 'IranNastaliq';
+  src: url('/fonts/IranNastaliq.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-IranNastaliq {
+  font-family: "IranNastaliq", 'Vazir', Arial, Helvetica, sans-serif !important;
+}
+
+@font-face {
+  font-family: 'cinema';
+  src: url('/fonts/cinema.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-cinema {
+  font-family: "cinema", 'Vazir', Arial, Helvetica, sans-serif !important;
 }
 
 @keyframes scale-fade {

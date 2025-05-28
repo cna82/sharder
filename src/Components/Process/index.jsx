@@ -11,36 +11,36 @@ const NestedFaq = () => {
     {
       title: "درخواست مواد خام اولیه",
       description: "ثبت سفارش مواد اولیه مورد نیاز برای شروع فرآیند تولید",
-      icon: <Package className=" md:w-10 md:h-10 w-7 h-7  text-white " />,
+      icon: <Package className=" md:w-8 md:h-8 w-7 h-7  text-white " />,
     },
     {
       title: "تحویل به خط تولید مجموعه",
       description: "انتقال مواد اولیه به خطوط تولید جهت پردازش",
-      icon: <Factory className="md:w-10 md:h-10 w-7 h-7 text-white " />,
+      icon: <Factory className="md:w-8 md:h-8 w-7 h-7 text-white " />,
     },
     {
       title: "تولید قطعه",
       description: "ساخت قطعات مورد نظر با استفاده از تجهیزات پیشرفته",
-      icon: <Hammer className="md:w-10 md:h-10 w-7 h-7 text-white " />,
+      icon: <Hammer className="md:w-8 md:h-8 w-7 h-7 text-white " />,
     },
     {
       title: "ارسال به انبار جهت بسته بندی",
       description: "انتقال قطعات تولید شده به انبار برای بسته‌بندی نهایی",
-      icon: <Warehouse className="md:w-10 md:h-10 w-7 h-7 text-white " />,
+      icon: <Warehouse className="md:w-8 md:h-8 w-7 h-7 text-white " />,
     },
     {
       title: "تحویل به واحد فروش",
       description: "تحویل بسته‌بندی‌های نهایی به تیم فروش برای عرضه",
-      icon: <ShoppingCart className="md:w-10 md:h-10 w-7 h-7 text-white " />,
+      icon: <ShoppingCart className="md:w-8 md:h-8 w-7 h-7 text-white " />,
     },
   ];
 
   return (
     <div className="w-full bg-gray-50  ">
       <section className="w-[95%]  mx-auto py-24 px-6 text-center">
-        <h2 className="text-4xl font-bold text-sky-400 mb-2">
+        <h2 className="text-3xl md:text-4xl leading-14 font-cinema font-bold text-sky-400 mb-2">
           فرآیند تولید محصولات در{" "}
-          <span className="text-5xl text-blue-900 mb-5">شاردر</span>
+          <span className=" text-blue-900 mb-5">شاردر</span>
         </h2>
         <p className="text-xl mt-5 font-semibold text-gray-500 mb-12">
           مراحل انجام تولید قطعه در شاردر

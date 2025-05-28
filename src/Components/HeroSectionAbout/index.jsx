@@ -1,14 +1,13 @@
-"use client";
 import Image from "next/image";
 
 export const dynamic = "force-dynamic";
 
 export default function HeroSectionAbout() {
   const stats = [
-    { img: "/images/AboutUs/1.webp", label: "۵۶۰۰ متر فضای تولیدی" },
-    { img: "/images/AboutUs/2.webp", label: "۵۰ نماینده فروش" },
-    { img: "/images/AboutUs/3.webp", label: "۱۱۳ مرکز خدمات پس از فروش" },
-    { img: "/images/AboutUs/4.webp", label: "۱۳۴ نیروی متخصص" },
+    { img: "/images/AboutUs/1.webp", label: "فضای تولیدی صمیمانه و بزرگ" },
+    { img: "/images/AboutUs/2.webp", label: "فروش به صورت عمده و تکی" },
+    { img: "/images/AboutUs/3.webp", label: "خدمات پس از فروش عالی" },
+    { img: "/images/AboutUs/4.webp", label: "مهندسین درجه یک و با تجربه " },
   ];
 
   return (
@@ -18,7 +17,7 @@ export default function HeroSectionAbout() {
         <div className="text-right space-y-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-relaxed bg-gradient-to-r from-sky-500 to-sky-500 bg-clip-text text-transparent drop-shadow-md">
             تولیدی
-            <span className="text-gray-800 inline-block mx-2 text-3xl sm:text-3xl md:text-5xl">
+            <span className="text-orange-500 inline-block mx-2 text-3xl sm:text-3xl md:text-5xl">
               شاردر
             </span>
             <br />
@@ -28,11 +27,11 @@ export default function HeroSectionAbout() {
           <p className="text-lg sm:text-xl leading-relaxed text-black ">
             شاردر تولیدکننده چرخ گوشت های خانگی با تمرکز بر
             <span className="text-black font-semibold">
-            کنترل کیفیت و بازدهی بالا 
+              کنترل کیفیت و بازدهی بالا
             </span>
             است که تمامی محصولات با
-            <span className="text-black font-bold"> استاندارد ISO 9001 </span>
-            و کیفیت ممتاز تولید می‌شوند.
+            <span className="text-black font-bold"> استاندارد ISO 9001 </span>و
+            کیفیت ممتاز تولید می‌شوند.
           </p>
 
           <div>
@@ -47,14 +46,11 @@ export default function HeroSectionAbout() {
           </div>
 
           <div>
-            <p className="text-xl font-bold text-sky-600">
-              ویژگی‌های خاص ما:
-            </p>
+            <p className="text-xl font-bold text-sky-600">ویژگی‌های خاص ما:</p>
             <ul className="list-disc pr-5 mt-3 text-gray-800 space-y-2 text-base">
               <li>تولید بومی با استانداردهای جهانی</li>
               <li>خدمات پس از فروش سراسری، حرفه‌ای و سریع</li>
-              <li>555 روز وارانتی بی قید و شرط</li>
-
+              <li>۵۵۵  روز وارانتی بی قید و شرط</li>
             </ul>
           </div>
         </div>
