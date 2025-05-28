@@ -63,7 +63,7 @@ body {
 }
 
 .font-cinema {
-  font-family: 'cinema', 'iphone', 'Vazir', Arial, Helvetica, sans-serif !important;
+  font-family: 'cinema', 'Vazir', 'iphone', Arial, Helvetica, sans-serif !important;
 }
 
 @keyframes scale-fade {
