@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const dynamic = "force-dynamic";
 
-export default function HeroSectionAbout() {
+const HeroSectionAbout = () => {
   const stats = [
     { img: "/images/AboutUs/1.webp", label: "فضای تولیدی صمیمانه و بزرگ" },
     { img: "/images/AboutUs/2.webp", label: "فروش به صورت عمده و تکی" },
@@ -50,7 +50,7 @@ export default function HeroSectionAbout() {
             <ul className="list-disc pr-5 mt-3 text-gray-800 space-y-2 text-base">
               <li>تولید بومی با استانداردهای جهانی</li>
               <li>خدمات پس از فروش سراسری، حرفه‌ای و سریع</li>
-              <li>۵۵۵  روز وارانتی بی قید و شرط</li>
+              <li>۵۵۵ روز وارانتی بی قید و شرط</li>
             </ul>
           </div>
         </div>
@@ -84,4 +84,6 @@ export default function HeroSectionAbout() {
       </div>
     </section>
   );
-}
+};
+
+export default HeroSectionAbout;

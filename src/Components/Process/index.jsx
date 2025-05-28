@@ -39,7 +39,7 @@ const NestedFaq = () => {
     <div className="w-full bg-gray-50  ">
       <section className="w-[95%]  mx-auto py-24 px-6 text-center">
         <h2 className="text-3xl md:text-4xl leading-14 font-cinema font-bold text-sky-400 mb-2">
-          فرآیند تولید محصولات در{" "}
+          فرآیند تولید محصولات در
           <span className=" text-blue-900 mb-5">شاردر</span>
         </h2>
         <p className="text-xl mt-5 font-semibold text-gray-500 mb-12">
@@ -47,7 +47,7 @@ const NestedFaq = () => {
         </p>
 
         <div className="relative w-full">
-          {/* مسیر دسکتاپ */}
+          {/* desktop destination */}
           <svg
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
@@ -68,7 +68,7 @@ const NestedFaq = () => {
                 key={index}
                 className="flex flex-row md:flex-col  items-center md:text-center w-full md:w-auto relative"
               >
-                {/* خط عمودی موبایل */}
+                {/* vertical lines in mobiles */}
                 {index !== steps.length - 1 && (
                   <div className="block md:hidden absolute top-[4.5rem] right-[2rem] h-[60px] w-[1px] border-r-2 border-dashed border-gray-400  z-[-1]" />
                 )}

@@ -1,4 +1,4 @@
-// ✅ 1. فایل محصولات: src/lib/data/products.js
+// Products List datas
 export const products = [
   {
     id: 1,
@@ -520,7 +520,6 @@ export const products = [
     imgSrc: "/images/Products/product (12).webp",
     isAvaiable: true,
   },
-  
 ];
 
 // src/lib/data/products.js

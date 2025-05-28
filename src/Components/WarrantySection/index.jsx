@@ -23,7 +23,7 @@ const WarrantySection = () => {
       className="bg-gray-100  py-16 px-4 sm:px-6 lg:px-12 border-t-[2px] border-sky-400 "
     >
       <div className="max-w-7xl mx-auto space-y-16">
-        {/* معرفی */}
+        {/* introduction */}
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="space-y-6 text-gray-800">
             <h2 className="font-cinema md:text-4xl text-3xl  font-extrabold text-sky-600">
@@ -51,7 +51,7 @@ const WarrantySection = () => {
           </div>
         </div>
 
-        {/* شرایط ضمانت */}
+        {/* warranty conditions */}
         <div className="space-y-8">
           <h3 className="text-2xl font-bold text-blue-500 flex items-center gap-2">
             <FaCheckCircle className="text-sky-500" />
@@ -70,7 +70,7 @@ const WarrantySection = () => {
           </ul>
         </div>
 
-        {/* استثناها */}
+        {/* exepts */}
         <div className="bg-gradient-to-tr from-sky-500 to-blue-400 text-white rounded-2xl p-8 space-y-6 shadow-md">
           <h3 className="text-2xl font-bold flex items-center gap-2">
             <FaRegTimesCircle className="text-red-500" />
@@ -92,7 +92,7 @@ const WarrantySection = () => {
             </p>
             <p>
               <FaInfoCircle className="inline ml-3 text-orange-400" /> مشاهده
-              محصولات در{" "}
+              محصولات در
               <a
                 href="https://www.sharder.ir"
                 className="underline text-xl font-bold"
@@ -102,7 +102,7 @@ const WarrantySection = () => {
             </p>
             <p>
               <FaInfoCircle className="inline ml-3 text-orange-400" /> تماس با
-              خدمات :{" "}
+              خدمات :
               <strong dir="ltr">
                 <a href="tel:+989123456789">۰۲۱ ۳۶۹۱۷۶۰۳ </a>
               </strong>

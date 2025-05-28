@@ -19,7 +19,7 @@ const images = [
   "/images/HeroSection/Hero-section-5.webp",
 ];
 
-export default function ContactSection() {
+const SliderAbout = () => {
   return (
     <>
       <section className="w-full px-4 bg-gray-100 md:px-20 py-16 flex flex-col md:flex-row items-center justify-between gap-10">
@@ -39,8 +39,10 @@ export default function ContactSection() {
         {/* متن و امکانات */}
         <div className="flex-1 text-center md:text-right">
           <h2 className=" text-2xl md:text-3xl font-extrabold mb-4 text-orange-500">
-            با هم در 
-            <span className="text-sky-500  decoration-teal-500 inline-block mx-1.5">ارتباطیم!</span>
+            با هم در
+            <span className="text-sky-500  decoration-teal-500 inline-block mx-1.5">
+              ارتباطیم!
+            </span>
           </h2>
 
           <p className="text-gray-800 leading-loose mb-4 text-sm md:text-base">
@@ -90,6 +92,7 @@ export default function ContactSection() {
           </div>
         </div>
       </section>
+
       {/* اسلایدر گالری کارخانه */}
       <div className="w-full py-14 px-4 bg-gray-100 md:px-20">
         <Swiper
@@ -117,7 +120,7 @@ export default function ContactSection() {
           {images.map((src, idx) => (
             <SwiperSlide
               key={idx}
-              className="!w-[80%] sm:!w-[500px] md:!w-[600px] lg:!w-[700px] transition-all duration-300"
+              className="!w-[90vw] sm:!w-[500px] md:!w-[600px] lg:!w-[700px] transition-all duration-300"
             >
               <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl group shadow-2xl">
                 <Image
@@ -135,4 +138,6 @@ export default function ContactSection() {
       </div>
     </>
   );
-}
+};
+
+export default SliderAbout;

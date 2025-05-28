@@ -32,7 +32,7 @@ const ProductCard = React.memo(({ product }) => (
   </Link>
 ));
 
-export default function ProductsClient({ products }) {
+const ProductsClient = ({ products }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("");
@@ -135,4 +135,6 @@ export default function ProductsClient({ products }) {
       </div>
     </>
   );
-}
+};
+
+export default ProductsClient;

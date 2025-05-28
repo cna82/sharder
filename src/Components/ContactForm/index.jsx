@@ -19,7 +19,7 @@ const schema = z.object({
   recaptcha: z.string().min(1, { message: "لطفاً تأیید کنید که ربات نیستید" }),
 });
 
-export default function ContactForm() {
+const ContactForm = () => {
   const {
     register,
     handleSubmit,
@@ -149,9 +149,9 @@ export default function ContactForm() {
       <ToastContainer transition={Slide} />
     </section>
   );
-}
+};
 
-function InputField({ label, name, type = "text", register, error }) {
+const InputField = ({ label, name, type = "text", register, error }) => {
   return (
     <div className="relative">
       <input
@@ -168,9 +168,9 @@ function InputField({ label, name, type = "text", register, error }) {
       {error && <p className="text-red-600 text-xs mt-1">{error.message}</p>}
     </div>
   );
-}
+};
 
-function FloatingTextarea({ label, name, register, error }) {
+const FloatingTextarea = ({ label, name, register, error }) => {
   return (
     <div className="relative">
       <textarea
@@ -186,4 +186,6 @@ function FloatingTextarea({ label, name, register, error }) {
       {error && <p className="text-red-600 text-xs mt-1">{error.message}</p>}
     </div>
   );
-}
+};
+
+export default ContactForm;

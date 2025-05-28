@@ -26,7 +26,7 @@ const TrendingProducts = () => {
   return (
     <section className="bg-gray-100 py-14 px-4 md:px-10">
       <div className="max-w-7xl mx-auto">
-        {/* متن بالا */}
+        {/* upper text */}
         <div className="mb-8 space-y-2">
           <div className="w-full bg-gradient-to-r from-sky-100 via-white to-blue-200 py-4 shadow-inner border-y border-purple-300  rounded-2xl">
             <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center space-y-2">
@@ -51,17 +51,17 @@ const TrendingProducts = () => {
           </p>
         </div>
 
-        {/* تصاویر محصولات */}
+        {/* Products images */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-          {[3, 5, 6, 1].map((num,index) => (
+          {[3, 5, 6, 1].map((num, index) => (
             <div
               key={num}
               className="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
             >
               <Link href={`/products/${num}`}>
                 <Image
-                  src={`/images/Trending/trending-${index+1}.webp`}
-                  alt={`product-${index+1}`}
+                  src={`/images/Trending/trending-${index + 1}.webp`}
+                  alt={`product-${index + 1}`}
                   width={500}
                   height={600}
                   className="w-full h-auto object-cover"
@@ -71,7 +71,7 @@ const TrendingProducts = () => {
           ))}
         </div>
 
-        {/* عنوان وسط */}
+        {/* central titles */}
         <div className="text-center mt-14">
           <h3 className="font-cinema text-sky-400 text-2xl md:text-3xl font-extrabold mb-2">
             آسودگی خاطر با محصولات شاردر
@@ -82,7 +82,7 @@ const TrendingProducts = () => {
           </p>
         </div>
 
-        {/* ویژگی‌ها */}
+        {/* features */}
         {features.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
             {features?.map((item, idx) => (

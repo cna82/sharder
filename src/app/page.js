@@ -5,7 +5,7 @@ import HeroSection from "@/Components/HeroSection";
 import Process from "@/Components/Process";
 import TrendingProducts from "@/Components/TrendingProducts";
 import WarrantySection from "@/Components/WarrantySection";
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <HeroSection />
@@ -18,4 +18,4 @@ const Home = () => {
     </>
   );
 };
-export default Home;
+export default HomePage;

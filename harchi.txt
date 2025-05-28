@@ -6,7 +6,7 @@ seo =>{
     Faq section done .
     Single Product page done .
 }
-performnace >85
+font handling
 warning handling 
 meta datas
 build
