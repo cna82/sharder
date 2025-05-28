@@ -93,7 +93,7 @@ const Header = () => {
           {/* لوگوی بالایی در منوی بازشونده */}
           <div className="flex justify-center mb-4 border-b border-slate-600 pb-3">
             <h2 className="text-sky-700 font-IranNastaliq mt-6 font-bold  text-2xl">
-              شـرکـت <span className="text-slate-900">فـیدار</span> تجارت{" "}
+              شـرکت <span className="text-slate-900">فیدار</span> تجارت{" "}
               <span className="text-slate-900">هـیوا</span>{" "}
             </h2>
           </div>
