@@ -38,6 +38,13 @@ body {
 }
 
 @font-face {
+  font-family: 'iphone';
+  src: url('/fonts/iphone.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'IranNastaliq';
   src: url('/fonts/IranNastaliq.woff2') format('woff2');
   font-weight: normal;
@@ -56,7 +63,7 @@ body {
 }
 
 .font-cinema {
-  font-family: "cinema", 'Vazir', Arial, Helvetica, sans-serif !important;
+  font-family: 'cinema', 'iphone', 'Vazir', Arial, Helvetica, sans-serif !important;
 }
 
 @keyframes scale-fade {

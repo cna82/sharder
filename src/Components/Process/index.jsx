@@ -40,7 +40,7 @@ const NestedFaq = () => {
       <section className="w-[95%]  mx-auto py-24 px-6 text-center">
         <h2 className="text-3xl md:text-4xl leading-14 font-cinema font-bold text-sky-400 mb-2">
           فرآیند تولید محصولات در
-          <span className=" text-blue-900 mb-5">شاردر</span>
+          <span className=" text-blue-900 mb-5 inline-block mx-1.5">شاردر</span>
         </h2>
         <p className="text-xl mt-5 font-semibold text-gray-500 mb-12">
           مراحل انجام تولید قطعه در شاردر
