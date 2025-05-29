@@ -1,11 +1,13 @@
-import ClientImageSlider from "./ClientImageSlider"; // بدون dynamic import
-
+//imports
+import ClientImageSlider from "./ClientImageSlider";
+// AboutSection comp
 const AboutSection = () => {
+  //function for handling images src
   const images = Array.from(
     { length: 6 },
     (_, i) => `/images/imageGalleryFactory/factory-env (${i + 1}).webp`
   );
-
+  // return of comp
   return (
     <section className="w-full bg-gray-100 py-20 px-4">
       {/* Hero Section */}
@@ -20,7 +22,7 @@ const AboutSection = () => {
       </section>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12">
-        {/* متن درباره ما */}
+        {/* about us  */}
         <div className="text-gray-800 space-y-8 text-center md:text-right">
           <h2 className="text-3xl md:text-4xl font-extrabold text-sky-400 relative inline-block border-b w-full p-5">
             <span className="relative z-10">لوازم خانگی شاردر</span>
@@ -43,7 +45,7 @@ const AboutSection = () => {
           </p>
         </div>
 
-        {/* اسلایدر کلاینتی */}
+        {/* client side slider  */}
         <ClientImageSlider images={images} />
       </div>
     </section>

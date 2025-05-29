@@ -1,28 +1,9 @@
 // imports
 import Image from "next/image";
 import Link from "next/link";
-
+import features from "@/lib/data/trendingProducts";
 // Hero Comp
 const TrendingProducts = () => {
-  const features = [
-    {
-      icon: "/images/Trending/Warranty.webp",
-      title: "خدمات پس از فروش",
-    },
-    {
-      icon: "/images/Trending/Agency.webp",
-      title: "اخذ نمایندگی فروش",
-    },
-    {
-      icon: "/images/Trending/OEM.webp",
-      title: "تولید لوازم خانگی OEM",
-    },
-    {
-      icon: "/images/Trending/Complaints .webp",
-      title: "شکایات و انتقادات",
-    },
-  ];
-
   return (
     <section className="bg-gray-100 py-14 px-4 md:px-10">
       <div className="max-w-7xl mx-auto">

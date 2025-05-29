@@ -1,69 +1,16 @@
-import {
-  Building2,
-  Copyright,
-  Truck,
-  Headphones,
-  DollarSign,
-} from "lucide-react";
-
-const iconMap = {
-  building: Building2,
-  copyright: Copyright,
-  truck: Truck,
-  headphones: Headphones,
-  dollar: DollarSign,
-};
-
-const services = [
-  {
-    icon: "building",
-    title: "خدمات تولید",
-    description:
-      "خدمات تزریق، رنگ و پرس با دستگاه‌های پیشرفته و تیم حرفه‌ای ما انجام می‌پذیرد.",
-  },
-  {
-    icon: "copyright",
-    title: "طراحی و تولید قطعات",
-    description:
-      "توان تولید انواع قطعات لوازم خانگی به‌صورت تیراژی و دقیق در اختیار شماست.",
-  },
-  {
-    icon: "building",
-    title: "تولید OEM",
-    description:
-      "برند شما، تولید از ما! کارخانه کاختر آماده تولید محصولات با نام تجاری شماست.",
-  },
-  {
-    icon: "headphones",
-    title: "پشتیبانی ۷/۲۴",
-    description:
-      "پشتیبانی هوشمند، سریع و پاسخ‌گو در تمام ساعات شبانه‌روز برای مشتریان وفادار.",
-  },
-  {
-    icon: "dollar",
-    title: "بازگشت وجه",
-    description:
-      "با تضمین رضایت ۱۰۰٪، وجه پرداختی در صورت نارضایتی به‌صورت کامل عودت می‌گردد.",
-  },
-  {
-    icon: "truck",
-    title: "ارسال رایگان",
-    description:
-      "تمامی سفارشات در کمترین زمان ممکن، رایگان و ایمن به دست شما خواهد رسید.",
-  },
-];
-
+//imports
+import { services, iconMap } from "@/lib/data/amazingAbout";
+// Amazing about comp
 const AmazingAbout = () => {
   return (
     <section className="w-full bg-gradient-to-b from-gray-100 via-gray-100 to-gray-50 py-24 px-6 md:px-16 rtl text-right">
       <div className="max-w-7xl mx-auto">
         <section className="bg-sky-400  text-white py-20 px-6 text-center rounded-2xl mb-15 mt-1">
           <h1 className="font-cinema text-4xl font-extrabold mb-6 leading-snug border-b border-white pb-5">
-            خدمات ما ظرافت{" "}
+            خدمات ما ظرافت
             <span className="text-yellow-300 inline-block mx-1.5 ">
-              {" "}
               آشپزخانه
-            </span>{" "}
+            </span>
             شماست
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto text-white">
@@ -72,7 +19,7 @@ const AmazingAbout = () => {
         </section>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 ">
-          {services.map((service, idx) => {
+          {services?.map((service, idx) => {
             const Icon = iconMap[service.icon];
             return (
               <div

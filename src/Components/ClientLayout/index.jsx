@@ -3,6 +3,7 @@
 
 import dynamic from "next/dynamic";
 import { Vazirmatn, Geist, Geist_Mono } from "next/font/google";
+import ScrollProgress from "../ScrollProgress";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function ClientLayout({ children }) {
     <div
       className={`${vazir.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
     >
+      <ScrollProgress/>
       <Header />
       {children}
       <Footer />

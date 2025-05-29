@@ -1,59 +1,8 @@
-import {
-  LuShield,
-  LuTruck,
-  LuCreditCard,
-  LuHeadphones,
-  LuRotateCcw,
-  LuFactory,
-} from "react-icons/lu";
+//imports
 import AmazingFeaturesSlider from "./AmazingSlider";
 import { memo } from "react";
-
-const features = [
-  {
-    icon: LuShield,
-    color: "text-sky-500",
-    title: "خدمات پس از فروش عالی",
-    description:
-      "تمامی محصولات دارای ۵۵۵ روز وارانتی تعویض هستند؛ یعنی در صورت خرابی، محصول تعویض می‌شود نه تعمیر.",
-  },
-  {
-    icon: LuTruck,
-    color: "text-orange-500",
-    title: "ارسال رایگان",
-    description:
-      "شاردر محصولات را با ارسال کاملاً رایگان و بدون نگرانی به مشتریان تحویل می‌دهد.",
-  },
-  {
-    icon: LuCreditCard,
-    color: "text-sky-500",
-    title: "شرایط پرداخت عالی",
-    description:
-      "برای عاملین خرید و نمایندگان، شرایط پرداخت بسیار منعطف و قابل اجرا در نظر گرفته شده است.",
-  },
-  {
-    icon: LuHeadphones,
-    color: "text-orange-500",
-    title: "پشتیبانی درجه یک",
-    description:
-      "پاسخگویی سریع و راهنمایی کامل توسط کارشناسان و مسئولین کارخانه شاردر.",
-  },
-  {
-    icon: LuRotateCcw,
-    color: "text-sky-500",
-    title: "تضمین بازگشت وجه",
-    description:
-      "برای تجربه خرید مطمئن، شاردر تضمین بازگشت وجه را فراهم کرده است.",
-  },
-  {
-    icon: LuFactory,
-    color: "text-orange-500",
-    title: "تولید OEM با برند شما",
-    description:
-      "در کارخانه شاردر با بهترین متریال،صفر تا صد محصول خود را با برند اختصاصی تولید کنید.",
-  },
-];
-
+import features from "@/lib/data/amazingFeatures";
+// memo function for memozation
 const FeatureCard = memo(({ icon: Icon, title, description, color }) => (
   <div
     className="bg-white shadow py-6 px-5 rounded-xl border border-gray-100 hover:shadow-lg transition duration-300"
@@ -74,19 +23,19 @@ const FeatureCard = memo(({ icon: Icon, title, description, color }) => (
     </p>
   </div>
 ));
-
+// AmazingFeatures comp
 const AmazingFeatures = () => {
   return (
     <section
       dir="rtl"
       className="relative py-16 px-4 sm:px-10 bg-gray-100 overflow-hidden"
     >
-      {/* پس‌زمینه‌های ملایم */}
+      {/* bg for section */}
       <div className="absolute top-0 left-0 w-44 h-44 bg-sky-200 opacity-20 rounded-full -translate-x-1/3 -translate-y-1/3 pointer-events-none select-none" />
       <div className="absolute bottom-0 right-0 w-36 h-36 bg-teal-300 opacity-10 blur-3xl rounded-full pointer-events-none select-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* عنوان */}
+        {/* titles  */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="inline-block text-base font-medium px-4 py-2 bg-gradient-to-b from-sky-500 to-blue-300 text-white rounded-2xl shadow-sm select-none">
             شاردر ، انتخاب هر خانم ایرانی برای آشپزخانه
@@ -108,7 +57,7 @@ const AmazingFeatures = () => {
           </p>
         </div>
 
-        {/* لیست ویژگی‌ها و اسلایدر */}
+        {/* features */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-13 gap-x-5">
             {features.map((item, index) => (
@@ -122,7 +71,7 @@ const AmazingFeatures = () => {
             ))}
           </div>
 
-          {/* اسلایدر */}
+          {/* client side slider */}
           <div className="mt-6 lg:mt-0">
             <AmazingFeaturesSlider />
           </div>

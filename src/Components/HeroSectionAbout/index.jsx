@@ -1,19 +1,13 @@
+// imports
 import Image from "next/image";
-
+import stats from "@/lib/data/heroSectionAbout";
 export const dynamic = "force-dynamic";
-
+//HeroSectionAbout comp
 const HeroSectionAbout = () => {
-  const stats = [
-    { img: "/images/AboutUs/1.webp", label: "فضای تولیدی صمیمانه و بزرگ" },
-    { img: "/images/AboutUs/2.webp", label: "فروش به صورت عمده و تکی" },
-    { img: "/images/AboutUs/3.webp", label: "خدمات پس از فروش عالی" },
-    { img: "/images/AboutUs/4.webp", label: "مهندسین درجه یک و با تجربه " },
-  ];
-
   return (
     <section className="w-full bg-gray-100 py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-        {/* متن سمت راست */}
+        {/* texts */}
         <div className="text-right space-y-10">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-relaxed bg-gradient-to-r from-sky-500 to-sky-500 bg-clip-text text-transparent drop-shadow-md">
             تولیدی
@@ -55,14 +49,14 @@ const HeroSectionAbout = () => {
           </div>
         </div>
 
-        {/* آمارها با افکت شیشه‌ای جدید */}
+        {/* stats */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {stats.map((item, idx) => (
             <div
               key={idx}
               className="relative rounded-3xl border border-white/40 bg-white/60 backdrop-blur-lg p-6 flex flex-col items-center justify-center shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 ease-in-out group overflow-hidden"
             >
-              {/* افکت هاور گرادینت لطیف */}
+              {/* hover effects */}
               <div className="absolute -inset-1 opacity-0 group-hover:opacity-100 transition duration-500 blur-2xl bg-gradient-to-br from-sky-100 via-white to-gray-100 z-0" />
               <div className="relative z-10 flex flex-col items-center">
                 <Image

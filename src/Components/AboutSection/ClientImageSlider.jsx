@@ -1,11 +1,12 @@
 "use client";
+//imports
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Image from "next/image";
-
+// ClientImageSlider comp 
 const ClientImageSlider = ({ images }) => (
   <div className="relative w-full h-[280px] md:h-[450px] rounded-xl overflow-hidden shadow-2xl border-[10px] border-double border-sky-500">
     <Swiper

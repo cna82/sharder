@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <header
-      className=" fixed w-full top-0 z-50 bg-gray-100 border-b py-1 border-sky-600 shadow-md"
+      className=" fixed w-full top-2 z-50 bg-gray-100 border-b py-1 border-sky-600 shadow-md"
       dir="ltr"
     >
       {/* حذف لوگوی بزرگ موبایل بالا */}

@@ -1,32 +1,9 @@
-// app/components/HeroSection.tsx
+// imports  
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FaBolt,
-  FaShieldAlt,
-  FaTools,
-  FaCogs,
-  FaChevronLeft,
-} from "react-icons/fa";
-const features = [
-  {
-    icon: FaBolt,
-    title: "قدرت موتور بی‌ نظیر",
-    desc: "عملکرد صنعتی در ابعاد خانگی",
-  },
-  {
-    icon: FaShieldAlt,
-    title: "بدنه مقاوم پلاستیکی",
-    desc: "ساخته شده برای سال‌ها دوام",
-  },
-  {
-    icon: FaTools,
-    title: "خدمات پس از فروش",
-    desc: "۵۵۵ روز وارانتی بی قید و شرط",
-  },
-  { icon: FaCogs, title: "طراحی مهندسی‌ شده", desc: "امن ، زیبا و کاربردی" },
-];
-
+import HeroSectionFeatures from "@/lib/data/heroSectionFeatures";
+import { FaChevronLeft } from "react-icons/fa";
+// hero comp 
 const HeroSection = () => {
   return (
     <section className="relative w-full h-screen bg-gray-500 overflow-hidden">
@@ -57,7 +34,7 @@ const HeroSection = () => {
         </Link>
 
         <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-6 w-full max-w-5xl">
-          {features?.map(({ icon: Icon, title, desc }, idx) => (
+          {HeroSectionFeatures?.map(({ icon: Icon, title, desc }, idx) => (
             <div
               key={idx}
               className="bg-white/10 p-4 rounded-lg text-white text-center backdrop-blur-md"
