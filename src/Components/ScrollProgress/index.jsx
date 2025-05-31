@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const ScrollProgress = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
   const pathname = usePathname();
-  console.log(pathname);
+  // console.log(pathname);
 
   useEffect(() => {
     const handleScroll = () => {
