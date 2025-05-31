@@ -12,7 +12,7 @@ const HeroSectionFeatures = [
   },
   {
     icon: FaShieldAlt,
-    title: "بدنه مقاوم پلاستیکی",
+    title: "بدنه مقاوم و با کیفیت",
     desc: "ساخته شده برای سال‌ها دوام",
   },
   {
