@@ -40,7 +40,7 @@ export const metadata = {
     siteName: "شاردر",
     images: [
       {
-        url: "https://sharder.ir/images/logo/logo.png",
+        url: "https://sharder.ir/images/HeroSection/Hero-section-2.webp",
         width: 1200,
         height: 630,
         alt: "لوگوی شاردر - تولیدکننده چرخ گوشت و لوازم خانگی",

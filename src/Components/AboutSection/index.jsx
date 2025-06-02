@@ -12,7 +12,7 @@ const AboutSection = () => {
     <section className="w-full bg-gray-100 py-20 px-4">
       {/* Hero Section */}
       <section className="bg-sky-400/80 text-white py-20 mb-25 px-6 text-center rounded-lg">
-        <h1 className="text-4xl font-cinema font-extrabold mb-6 leading-snug border-b border-white pb-3">
+        <h1 className="text-5xl font-DimaYekanBold font-extrabold mb-6 leading-snug border-b border-white pb-3">
           <span className="text-yellow-200">شاردر</span> ؛ قدرت در قلب آشپزخانه
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-800">

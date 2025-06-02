@@ -1,9 +1,9 @@
-// imports  
+// imports
 import Image from "next/image";
 import Link from "next/link";
 import HeroSectionFeatures from "@/lib/data/heroSectionFeatures";
 import { FaChevronLeft } from "react-icons/fa";
-// hero comp 
+// hero comp
 const HeroSection = () => {
   return (
     <section className="relative w-full h-screen bg-gray-500 overflow-hidden">
@@ -20,7 +20,7 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-20 flex flex-col justify-center items-center h-full text-center text-white px-4">
-        <h1 className=" text-2xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-white">
+        <h1 className=" text-3xl md:text-6xl font-DimaYekanBold  font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-white">
           شاردر؛ قدرتی که اعتماد می‌سازه
         </h1>
         <p className="text-sm md:text-lg max-w-xl text-gray-200 bg-black/30 px-4 py-2 rounded mt-4">

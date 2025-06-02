@@ -1,9 +1,9 @@
 import steps from "@/lib/data/process";
 const NestedFaq = () => {
   return (
-    <div className="w-full bg-gray-50  ">
+    <div className="w-full bg-gray-100  ">
       <section className="w-[95%]  mx-auto py-24 px-6 text-center">
-        <h2 className="text-3xl md:text-4xl leading-14 font-cinema font-bold text-sky-400 mb-2">
+        <h2 className="font-DimaYekanBold text-4xl md:text-5xl leading-14 font-DimaYekanBold font-bold text-sky-400 mb-2">
           فرآیند تولید محصولات در
           <span className=" text-blue-900 mb-5 inline-block mx-1.5">شاردر</span>
         </h2>

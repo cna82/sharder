@@ -49,14 +49,14 @@ body {
 }
 
 @font-face {
-  font-family: 'cinema';
+  font-family: 'DimaYekanBold';
   src: url('/fonts/DimaYekanWebBold.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
-.font-cinema {
-  font-family: 'cinema', 'Vazir', 'iphone', Arial, Helvetica, sans-serif !important;
+.font-DimaYekanBold {
+  font-family: 'DimaYekanBold', 'Vazir', 'iphone', Arial, Helvetica, sans-serif !important;
 }
 
 @keyframes scale-fade {

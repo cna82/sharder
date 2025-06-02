@@ -7,7 +7,7 @@ const HeroSectionContact = ({ container }) => {
 
       {/* Main contents */}
       <div className="relative max-w-6xl mx-auto z-10 text-center">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-sky-500 mb-6 drop-shadow-sm">
+        <h1 className="font-DimaYekanBold text-4xl md:text-6xl font-extrabold text-sky-500 mb-6 drop-shadow-sm">
           تماس با ما
         </h1>
         <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -15,7 +15,7 @@ const HeroSectionContact = ({ container }) => {
           باشید.
         </p>
 
-        {/* با حفظ انیمیشن‌های فرانت فقط برای کلاینت */}
+        {/* client animations to save ssr*/}
         <ClientMotionBox container={container} />
       </div>
     </section>

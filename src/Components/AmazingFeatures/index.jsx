@@ -37,10 +37,10 @@ const AmazingFeatures = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* titles  */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="inline-block text-base font-medium px-4 py-2 bg-gradient-to-b from-sky-500 to-blue-300 text-white rounded-2xl shadow-sm select-none">
+          <h2 className="inline-block  text-base font-medium px-4 py-2 bg-gradient-to-b from-sky-500 to-blue-300 text-white rounded-2xl shadow-sm select-none">
             شاردر ، انتخاب هر خانم ایرانی برای آشپزخانه
           </h2>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mt-6 leading-tight">
+          <h1 className="text-4xl font-DimaYekanBold sm:text-5xl font-extrabold text-gray-800 mt-6 leading-tight">
             چرخ گوشت های خانگی
             <span className="text-sky-500 inline-block mx-3">شاردر</span>
           </h1>

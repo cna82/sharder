@@ -13,8 +13,8 @@ const WarrantySection = () => {
         {/* introduction */}
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="space-y-6 text-gray-800">
-            <h2 className="font-cinema md:text-4xl text-3xl  font-extrabold text-sky-600">
-              ضـمـا نـت‌ نـامـه رسـمی{" "}
+            <h2 className="font-DimaYekanBold md:text-5xl text-4xl  font-extrabold text-sky-600">
+              ضـمـا نـت‌ نـامـه رسـمی
               <span className="text-orange-500 inline-block  mx-1.5">
                 شاردر
               </span>
@@ -28,7 +28,7 @@ const WarrantySection = () => {
 
           <div className="flex justify-center">
             <Image
-              src="/images/Gurantee/گارانتی.jpg"
+              src="/images/Gurantee/guarantee.jpg"
               alt="لوگوی گارانتی"
               width={260}
               height={260}

@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -55,12 +54,12 @@ const ProductsClient = ({ products }) => {
   return (
     <>
       {/* Hero */}
-      <div className="bg-gradient-to-br from-sky-400 via-blue-300 to-sky-200 text-white py-24 text-center px-6 shadow-inner">
-        <h1 className="text-5xl font-extrabold drop-shadow-xl mb-3 tracking-tight">
+      <div className="bg-gradient-to-br from-sky-500 via-blue-400 to-sky-300 text-white py-24 text-center px-6 shadow-inner">
+        <h1 className="font-DimaYekanBold  text-5xl md:text-6xl font-extrabold drop-shadow-xl mb-3 ">
           محصولات شاردر
         </h1>
-        <p className="text-md font-light">
-          چرخ‌گوشت‌های خاص ، مخصوص خاص ترین ها{" "}
+        <p className="text-md font-light text-gray-200/90">
+          در قسمت پایین تمامی محصولات کارخانه شاردر قابل رویت میباشد .
         </p>
       </div>
 
@@ -71,7 +70,7 @@ const ProductsClient = ({ products }) => {
           <input
             type="text"
             id="search"
-            placeholder=" "
+            placeholder="input search"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="peer w-full rounded-xl bg-white/50 backdrop-blur-md border text-black border-purple-300 px-12 pt-5 pb-2 text-sm  text-right placeholder-transparent shadow-md"

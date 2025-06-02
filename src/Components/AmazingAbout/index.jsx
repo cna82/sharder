@@ -6,14 +6,14 @@ const AmazingAbout = () => {
     <section className="w-full bg-gradient-to-b from-gray-100 via-gray-100 to-gray-50 py-24 px-6 md:px-16 rtl text-right">
       <div className="max-w-7xl mx-auto">
         <section className="bg-sky-400  text-white py-20 px-6 text-center rounded-2xl mb-15 mt-1">
-          <h1 className="font-cinema text-4xl font-extrabold mb-6 leading-snug border-b border-white pb-5">
+          <h1 className="font-DimaYekanBold text-5xl font-extrabold mb-6 leading-snug border-b border-white pb-5">
             خدمات ما ظرافت
             <span className="text-yellow-300 inline-block mx-1.5 ">
               آشپزخانه
             </span>
             شماست
           </h1>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto text-white">
+          <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-100">
             تجربه ای بی نظیر همراه با شاردر
           </p>
         </section>

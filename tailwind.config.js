@@ -8,7 +8,7 @@ module.exports = {
       },
       fontFamily: {
         Vazirmatn: ["var(--font-vazir)"],
-        cinema: ["var(--font-cinema)"],
+        DimaYekanBold: ["var(--font-DimaYekanBold)"],
       },
       keyframes: {
         fadeIn: {

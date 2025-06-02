@@ -1,5 +1,5 @@
 "use client";
-//imports 
+//imports
 import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import ReCAPTCHA from "react-google-recaptcha";
 import { ToastContainer, toast, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-//schema 
+//schema
 const schema = z.object({
   fullName: z.string().min(3, { message: "حداقل ۳ کاراکتر وارد کنید" }),
   email: z.string().email({ message: "ایمیل معتبر وارد کنید" }),
@@ -18,7 +18,7 @@ const schema = z.object({
   message: z.string().min(10, { message: "حداقل ۱۰ کاراکتر وارد کنید" }),
   recaptcha: z.string().min(1, { message: "لطفاً تأیید کنید که ربات نیستید" }),
 });
-//ontact comp 
+//ontact comp
 const ContactForm = () => {
   const {
     register,
@@ -76,7 +76,7 @@ const ContactForm = () => {
         </svg>
       </div>
       <div className="relative z-10 max-w-4xl mx-auto bg-white p-6 md:p-10 rounded-2xl shadow-xl">
-        <h2 className="text-3xl font-bold text-center text-sky-500 mb-8">
+        <h2 className="font-DimaYekanBold text-4xl md:text-5xl font-bold text-center text-sky-500 mb-8">
           فرم تماس با ما
         </h2>
 

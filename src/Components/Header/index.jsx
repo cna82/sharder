@@ -1,25 +1,38 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const onResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  return isMobile;
+};
+
 const Header = () => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   const routeRegex = /^\/($|products($|\/.+)|contact|about$)/;
   if (!routeRegex.test(pathname)) return null;
 
   return (
     <header
-      className=" fixed w-full top-2 z-50 bg-gray-100 border-b py-1 border-sky-600 shadow-md"
+      className="fixed w-full top-2 z-50 bg-gray-100 border-b py-1 border-sky-600 shadow-md"
       dir="ltr"
     >
-      {/* حذف لوگوی بزرگ موبایل بالا */}
-
-      {/* نوار اصلی */}
       <div className="max-w-full mx-auto flex items-center justify-between px-4 py-2 lg:py-3 relative">
         {/* دسکتاپ: لوگو چپ */}
         <div className="hidden lg:block w-[120px] h-[50px] relative">
@@ -30,17 +43,17 @@ const Header = () => {
               fill
               sizes="(min-width: 1024px) 120px"
               style={{ objectFit: "contain" }}
-              priority
+              priority={!isMobile} // فقط دسکتاپ priority داره
               className="hover:scale-110 transition-transform duration-500"
             />
           </Link>
         </div>
 
-        {/* دسکتاپ: لوگوی شرکت در وسط */}
+        {/* دسکتاپ: لوگوی شرکت وسط */}
         <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 text-center">
           <h2 className="text-sky-700 font-IranNastaliq mt-6 font-bold  text-3xl">
-            شـرکـت <span className="text-slate-900">فـیدار</span> تجارت{" "}
-            <span className="text-slate-900">هـیوا</span>{" "}
+            شـرکـت <span className="text-slate-900">فیدار</span> تجارت &nbsp;
+            <span className="text-slate-900">هـیوا</span>&nbsp;
           </h2>
         </div>
 
@@ -61,8 +74,8 @@ const Header = () => {
               fill
               sizes="(max-width: 1023px) 110px"
               style={{ objectFit: "contain" }}
+              priority={isMobile} // فقط موبایل priority داره
               className="hover:scale-110 transition-transform duration-500"
-              priority
             />
           </Link>
 
@@ -71,11 +84,7 @@ const Header = () => {
             className="ml-2 p-2 rounded-md text-sky-600 hover:bg-sky-100 transition-colors"
             aria-label="Toggle Menu"
           >
-            {menuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
@@ -93,13 +102,12 @@ const Header = () => {
           {/* لوگوی بالایی در منوی بازشونده */}
           <div className="flex justify-center mb-4 border-b border-slate-600 pb-3">
             <h2 className="text-sky-700 font-IranNastaliq mt-6 font-bold  text-2xl">
-              شـرکت <span className="text-slate-900">فیدار</span> تجارت{" "}
-              <span className="text-slate-900">هـیوا</span>{" "}
+              شـرکت <span className="text-slate-900">فیدار</span> تجارت&nbsp;
+              <span className="text-slate-900">هـیوا</span>&nbsp;
             </h2>
           </div>
 
           {[
-            // لینک‌ها
             { href: "/", label: "صفحه اصلی" },
             { href: "/products", label: "لیست محصولات" },
             { href: "/pdf", label: "کاتالوگ محصولات" },

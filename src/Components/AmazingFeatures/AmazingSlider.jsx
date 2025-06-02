@@ -1,6 +1,7 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -23,11 +24,16 @@ export default function AmazingFeaturesSlider() {
       >
         {images.map((src, index) => (
           <SwiperSlide key={index}>
-            <img
-              src={src}
-              alt={`Slide ${index + 1}`}
-              className="w-full h-72 md:h-80 lg:h-96 object-cover"
-            />
+            <div className="relative w-full h-72 md:h-80 lg:h-96">
+              <Image
+                src={src}
+                alt={`Slide ${index + 1}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={index === 0} // فقط اولین تصویر priority داشته باشد
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

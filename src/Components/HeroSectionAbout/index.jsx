@@ -9,7 +9,7 @@ const HeroSectionAbout = () => {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         {/* texts */}
         <div className="text-right space-y-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-relaxed bg-gradient-to-r from-sky-500 to-sky-500 bg-clip-text text-transparent drop-shadow-md">
+          <h2 className="font-DimaYekanBold text-3xl sm:text-3xl md:text-4xl font-extrabold leading-relaxed bg-gradient-to-r from-sky-500 to-sky-500 bg-clip-text text-transparent drop-shadow-md">
             تولیدی
             <span className="text-orange-500 inline-block mx-2 text-3xl sm:text-3xl md:text-5xl">
               شاردر

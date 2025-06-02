@@ -12,7 +12,7 @@ const TrendingProducts = () => {
           <div className="w-full bg-gradient-to-r from-sky-100 via-white to-blue-200 py-4 shadow-inner border-y border-purple-300  rounded-2xl">
             <div className="max-w-4xl mx-auto text-center flex flex-col items-center justify-center space-y-2">
               <div className="flex items-center justify-center gap-2 text-sky-600">
-                <span className=" text-xl md:text-4xl font-bold tracking-wide">
+                <span className=" font-DimaYekanBold text-2xl md:text-5xl font-bold tracking-wide">
                   محصولات
                   <span className="text-blue-900"> پرفروش </span>
                   شاردر
@@ -54,7 +54,7 @@ const TrendingProducts = () => {
 
         {/* central titles */}
         <div className="text-center mt-14">
-          <h3 className="font-cinema text-sky-400 text-2xl md:text-3xl font-extrabold mb-2">
+          <h3 className="font-DimaYekanBold text-sky-400 text-3xl md:text-4xl font-extrabold mb-2">
             آسودگی خاطر با محصولات شاردر
           </h3>
           <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto">
