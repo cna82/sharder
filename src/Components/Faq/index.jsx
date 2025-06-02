@@ -13,12 +13,12 @@ const Faq = () => {
       {/* Hero Section */}
       <section className="bg-sky-400 text-white py-20 px-6 text-center">
         <h1 className="text-4xl md:text-5xl font-DimaYekanBold font-extrabold mb-6 leading-snug border-b border-white pb-5">
-          <span className="text-5xl md:tetx-6xl text-yellow-200   ">
-            شـاردر
+          <span className="text-5xl md:tetx-6xl text-yellow-200   ">شاردر</span>
+          ؛ جایی که
+          <span className="text-5xl md:tetx-6xl text-yellow-200 inline-block mx-1.5">
+            قدرت
           </span>
-          ؛ جـایـی کـه
-          <span className="text-5xl md:tetx-6xl text-yellow-200 inline-block mx-1.5">قدرت</span>
-          بـی‌ صـدا مـی‌ چـرخـه !
+          بی‌ صدا می‌ چرخه !
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-700">
           انتخابی مطمئن برای کسانی که کیفیت، پشتیبانی و دوام را در
